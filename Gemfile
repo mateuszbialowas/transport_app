@@ -14,6 +14,8 @@ gem "redis", ">= 4.0.1"
 gem "bcrypt", "~> 3.1.7"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
+gem "simple_form", "~> 5.3"
+gem "devise", "~> 4.9"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
@@ -30,4 +32,3 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "simple_form", "~> 5.3"

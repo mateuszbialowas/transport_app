@@ -11,6 +11,8 @@
   </head>
 
   <body>
+  <%= render NavbarComponent.new(current_user:) %>
+
   <div class="container">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
+  mount LetterOpenerWeb::Engine, at: "/emails" if Rails.env.development?
 
+  devise_for :users, controllers: { invitations: 'users/invitations' }
   devise_scope :user do
     authenticated :user do
-      root 'static_pages#home', as: :authenticated_root
+      root 'static_pages#home'
     end
 
+    resources :users, only: [:index]
+
     unauthenticated do
-      root 'devise/sessions#new', as: :unauthenticated_root
+      root 'devise/sessions#new', as: :unroot
     end
   end
 

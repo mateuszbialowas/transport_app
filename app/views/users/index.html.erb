@@ -1,0 +1,27 @@
+<h1>Klienci</h1>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <p>Wszyscy klienci</p>
+  <%= link_to "Zaproś nowego klienta", new_user_invitation_path, class: 'btn btn-primary' %>
+</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Email</th>
+    <th scope="col">Rola</th>
+    <th scope="col">Data przyjęcia zaproszenia</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% users.each do |user| %>
+    <tr>
+      <th scope="row"><%= user.id %></th>
+      <td><%= user.email %></td>
+      <td><%= user.role %></td>
+      <td><%= user.invitation_accepted_at.present? ? l(user.invitation_accepted_at, format: :short) : "" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

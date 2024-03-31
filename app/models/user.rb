@@ -12,4 +12,7 @@ class User < ApplicationRecord
   ROLES = [ADMIN, CLIENT].freeze
 
   enum role: { admin: ADMIN, client: CLIENT }
+
+  #Validations
+  validates :role, presence: true, inclusion: { in: ROLES }
 end

@@ -1,7 +1,11 @@
-class Users::InvitationsController < Devise::InvitationsController
-  private
+# frozen_string_literal: true
 
-  def invite_resource(&block)
-    super { |user| user.role = User::CLIENT }
+module Users
+  class InvitationsController < Devise::InvitationsController
+    private
+
+    def invite_resource(&)
+      super { |user| user.role = User::CLIENT }
+    end
   end
 end

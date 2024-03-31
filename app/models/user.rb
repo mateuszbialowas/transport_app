@@ -13,6 +13,6 @@ class User < ApplicationRecord
 
   enum role: { admin: ADMIN, client: CLIENT }
 
-  #Validations
+  # Validations
   validates :role, presence: true, inclusion: { in: ROLES }
 end

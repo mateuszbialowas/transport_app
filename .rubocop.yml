@@ -22,3 +22,18 @@ AllCops:
     - "db/*"
     - "public/**/*"
     - "vendor/**/*"
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Exclude:
+    - "db/migrate/*.rb"
+
+Layout/LineLength:
+  Exclude:
+    - "config/initializers/devise.rb"
+
+Lint/MissingSuper:
+  Exclude:
+    - "app/components/*.rb"

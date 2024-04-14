@@ -7,4 +7,5 @@
   <%= link_to "Back to documents", documents_path %>
 
   <%= button_to "Destroy this document", @document, method: :delete %>
+  <%= button_tag "Save", data: {controller: "cmr", action: "cmr#save"} %>
 </div>

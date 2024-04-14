@@ -10,9 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_26_230333) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_14_133401) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "documents", force: :cascade do |t|
+    t.string "cmr_number"
+    t.string "sender"
+    t.string "consignee"
+    t.string "place_of_delivery"
+    t.string "place_and_date_of_taking_over_the_goods"
+    t.string "documents_attached"
+    t.string "sender_instructions"
+    t.string "instructions_as_to_payment_for_carriage"
+    t.string "cod"
+    t.string "carriage"
+    t.string "successive_carrier"
+    t.string "carriers_reservations_and_observations"
+    t.string "special_agreements"
+    t.string "to_be_paid_by"
+    t.string "established_in"
+    t.string "established_on"
+    t.string "signature_of_the_sender"
+    t.string "signature_of_the_carrier"
+    t.string "signature_of_the_consignee"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

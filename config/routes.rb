@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     authenticated :user do
       root 'static_pages#home'
+      resources :documents
     end
 
     resources :users, only: [:index]

@@ -1,4 +1,5 @@
 import {Controller} from "@hotwired/stimulus"
+import jsPDF from 'jspdf';
 
 // Connects to data-controller="cmr"
 export default class extends Controller {
@@ -27,7 +28,8 @@ export default class extends Controller {
         doc.setTextColor(237, 23, 72);
         doc.setFontSize(28);
 
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
+
         doc.text(7, 25, '1');
         doc.setFontSize(6.5);
         doc.text(14, 20, 'Egzemplarz dla nadawcy');
@@ -38,7 +40,9 @@ export default class extends Controller {
 
         // CMR - CONSIGNMENT NOTE
         doc.rect(105, 25, 91, 24);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
+        doc.setFont(undefined, "normal")
+
         doc.setFontSize(5.5);
         doc.text(108, 27, 'MIEDZYNARODOWY SAMOCHODOWY LIST PRZEWOZOWY');
         doc.text(108, 29, 'INTERNATIONALER FRACHTBRIEF');
@@ -56,7 +60,7 @@ export default class extends Controller {
         doc.text(154, 47.2, 'goods by road (CMR)');
 
         doc.setFontSize(14);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(145, 33.5, 'CMR');
         doc.setFontSize(10);
         doc.text(159, 33, 'No:');
@@ -65,10 +69,10 @@ export default class extends Controller {
         // 1. NADAWCA
         doc.rect(14, 25, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 30, '1');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 27, 'Nadawca (nazwisko lub nazwa, adres, kraj)');
         doc.text(21, 28.8, 'Absender (Name, Anschrift, Land)');
         doc.text(21, 30.6, 'Sender (name, address, country)');
@@ -77,10 +81,10 @@ export default class extends Controller {
         // 2. ODBIORCA
         doc.rect(14, 49, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 54, '2');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 51, 'Odbiorca (nazwisko lub nazwa, adres, kraj)');
         doc.text(21, 52.8, 'Empfanger (Name, Anschrift, Land)');
         doc.text(21, 54.6, 'Consignee (name, address, country)');
@@ -89,10 +93,10 @@ export default class extends Controller {
         // 3. MIEJSCE PRZEZNACZENIA
         doc.rect(14, 73, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 78, '3');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 75, 'Miejsce przeznaczenia (miejscowosc, kraj)');
         doc.text(21, 76.8, 'Auslieferungsort des Gutes (Ort, Land)');
         doc.text(21, 78.6, 'Place of delivery of the goods (place, country)');
@@ -101,10 +105,10 @@ export default class extends Controller {
         // 4. MIEJSCE I DATA ZAŁADOWANIA
         doc.rect(14, 97, 91, 15);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 102, '4');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 99, 'Miejsce i data zaladowania (miejscowosc, kraj, data)');
         doc.text(21, 100.8, 'Ort und Tag der Ubernahme das Gutes (Ort, Land, Datum)');
         doc.text(21, 102.6, 'Place and date taking over the goods (place, country, data)');
@@ -113,10 +117,10 @@ export default class extends Controller {
         // 5. ZAŁĄCZONE DOKUMENTY
         doc.rect(14, 112, 91, 15);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 117, '5');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 114, 'Zalaczone dokumenty');
         doc.text(21, 115.8, 'Beigefugte Dokumente');
         doc.text(21, 117.6, 'Documents attached');
@@ -128,10 +132,10 @@ export default class extends Controller {
 
         // 6.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 133, '6');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 130, 'Cechy i numery');
         doc.text(21, 131.8, 'Kennzeichen und Nammern');
         doc.text(21, 133.6, 'Marks and Nos');
@@ -142,10 +146,10 @@ export default class extends Controller {
 
         // 7.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(46, 133, '7');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(50, 130, 'Ilosc sztuk');
         doc.text(50, 131.8, 'Anzahl der Packstucke');
         doc.text(50, 133.6, 'Number of packages');
@@ -156,10 +160,10 @@ export default class extends Controller {
 
         // 8.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(75, 133, '8');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(79, 130, 'Sposob opakowania');
         doc.text(79, 131.8, 'Art der Verpackung');
         doc.text(79, 133.6, 'Method of packing');
@@ -170,10 +174,10 @@ export default class extends Controller {
 
         // 9.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(101, 133, '9');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(105, 130, 'Rodzaj towaru');
         doc.text(105, 131.8, 'Bezeichnung des Gutes');
         doc.text(105, 133.6, 'Nature of the goods');
@@ -183,10 +187,10 @@ export default class extends Controller {
         // 10. NR STATYSTYCZNY
         doc.rect(127, 127, 23, 53);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(128, 133, '10');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(134, 130, 'Numer statystyczny');
         doc.text(134, 131.8, 'Statistiknummer');
         doc.text(134, 133.6, 'Statistical number');
@@ -195,10 +199,10 @@ export default class extends Controller {
         // 11. WAGA BRUTTO
         doc.rect(150, 127, 23, 53);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(151, 133, '11');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(157, 130, 'Waga brutto w kg');
         doc.text(157, 131.8, 'Bruttogewicht in kg');
         doc.text(157, 133.6, 'Groos weight in kg');
@@ -207,10 +211,10 @@ export default class extends Controller {
         // 12. OBJĘTOŚĆ
         doc.rect(173, 127, 23, 53);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(174, 133, '12');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(180, 130, 'Objetosc w m3');
         doc.text(180, 131.8, 'Umfang m3');
         doc.text(180, 133.6, 'Volume in m3');
@@ -219,10 +223,10 @@ export default class extends Controller {
         // 13. INSTRUKCJE NADAWCY
         doc.rect(14, 187, 88, 42);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 192, '13');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 189, 'Instrukcje nadawcy');
         doc.text(21, 190.8, 'Anweisungen des Absenders');
         doc.text(21, 192.6, 'Senders instructions');
@@ -231,10 +235,10 @@ export default class extends Controller {
         // 14. POSTANOWIENIA ODNOŚNIE PRZEWOŹNEGO
         doc.rect(14, 229, 88, 14);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 234, '14');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 231, 'Postanowienia odnosnie przewoznego');
         doc.text(21, 232.8, 'Frechtzahlungsanweisungen');
         doc.text(21, 234.6, 'Instruction as to payment for carriage');
@@ -245,10 +249,10 @@ export default class extends Controller {
         // 15. ZAPŁATA
         doc.rect(102, 243, 94, 9);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(103, 248, '15');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(110, 246, 'Zaplata');
         doc.text(110, 247.8, 'Ruckerstattung');
         doc.text(110, 249.6, 'Cash on delivery');
@@ -260,12 +264,12 @@ export default class extends Controller {
         doc.setLineWidth(thin);
         doc.rect(105, 49, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(106, 54, '16');
         doc.setFontSize(10);
         doc.text(112, 71.5, 'NR REJ.:');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(112, 51, 'Przewoznik (nazwisko lub nazwa, adres, kraj)');
         doc.text(112, 52.8, 'Frachtfuhrer (Name, Anschrift, Land)');
         doc.text(112, 54.6, 'Carrier (name, address, country)');
@@ -274,10 +278,10 @@ export default class extends Controller {
         // 17. KOLEJNI PRZEWOŹNICY
         doc.rect(105, 73, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(106, 78, '17');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(112, 75, 'Kolejni przewoznicy (nazwisko lub nazwa, adres, kraj)');
         doc.text(112, 76.8, 'Nachfolgende Frachtfuhrer (Name, Anschrift, Land)');
         doc.text(112, 78.6, 'Successive carriers (name, address, country)');
@@ -286,10 +290,10 @@ export default class extends Controller {
         // 18. ZASTRZEŻENIA I UWAGI PRZEWOŹNIKA
         doc.rect(105, 97, 91, 30);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(106, 102, '18');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(112, 99, 'Zastrzezenia i uwagi przewoznika');
         doc.text(112, 100.8, 'Vorbehalte und Bemerkungen der Frachtfuhrer');
         doc.text(112, 102.6, 'Carrier’s reservations and observations');
@@ -298,10 +302,10 @@ export default class extends Controller {
         // 19. POSTANOWIENIA SPECJALNE
         doc.rect(102, 187, 94, 22);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(103, 192, '19');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(110, 189, 'Postanowienia specjalne');
         doc.text(110, 190.8, 'Besondere Vereinbarungen');
         doc.text(110, 192.6, 'Special agreements');
@@ -329,10 +333,10 @@ export default class extends Controller {
         doc.rect(150, 216, 12, 27);
 
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(103, 214, '20');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(110, 211, 'Do zaplacenia');
         doc.text(110, 212.8, 'Zu zahlen vom');
         doc.text(110, 214.6, 'To be paid by');
@@ -369,10 +373,10 @@ export default class extends Controller {
         doc.setLineWidth(thin);
         doc.rect(14, 243, 88, 9);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 248, '21');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 245, 'Wystawiono w');
         doc.text(21, 246.8, 'Ausgefertigt in');
         doc.text(21, 248.6, 'Established in');
@@ -384,10 +388,10 @@ export default class extends Controller {
         // 22. PODPIS I STEMPEL NADAWCY
         doc.rect(14, 252, 60, 35);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 257, '22');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(16, 281.6, 'Podpis i stempel nadawcy');
         doc.text(16, 283.4, 'Unterschrift und Stempel des Absenders');
         doc.text(16, 285.2, 'Signature and stamp of the sender');
@@ -397,10 +401,10 @@ export default class extends Controller {
         doc.setLineWidth(fat);
         doc.rect(74, 252, 60, 35);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(75, 257, '23');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(76, 281.6, 'Podpis i stempel przewoznika');
         doc.text(76, 283.4, 'Unterschrift und Stempel des Frachtfuhrers');
         doc.text(76, 285.2, 'Signature and stamp of the carrier');
@@ -410,10 +414,10 @@ export default class extends Controller {
         doc.setLineWidth(thin);
         doc.rect(134, 252, 62, 35);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(136, 257, '24');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(142, 255, 'Przesylke otrzymano / Gut empfangen');
         doc.text(142, 256.8, '/Goods received');
         doc.text(136, 261, 'Miejscowosc');
@@ -447,7 +451,7 @@ export default class extends Controller {
         doc.text(198.4, 90, '* In case of dangerous goods mention, besides the possible certi fication, on the last line of the column the particulars of the class, the number and the letter, if any.', null, -90);
 
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(11.5, 191.5, '1 - 15', null, 90);
         doc.text(11.5, 163, '19 + 20 + 22', null, 90);
 
@@ -456,7 +460,7 @@ export default class extends Controller {
 
 
         doc.setFontSize(8);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.setTextColor(1, 1, 1);
         doc.text(21, 35, document.getElementById("senderaddress").value);
         doc.text(166, 33, document.getElementById("cmrnumber").value);
@@ -533,7 +537,7 @@ export default class extends Controller {
         doc.setTextColor(0, 130, 200);
         doc.setFontSize(28);
 
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(7, 25, '2');
         doc.setFontSize(6.5);
         doc.text(14, 20, 'Egzemplarz dla odbiorcy');
@@ -545,7 +549,7 @@ export default class extends Controller {
 
         // CMR - CONSIGNMENT NOTE
         doc.rect(105, 25, 91, 24);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.setFontSize(5.5);
         doc.text(108, 27, 'MIEDZYNARODOWY SAMOCHODOWY LIST PRZEWOZOWY');
         doc.text(108, 29, 'INTERNATIONALER FRACHTBRIEF');
@@ -563,7 +567,7 @@ export default class extends Controller {
         doc.text(154, 47.2, 'goods by road (CMR)');
 
         doc.setFontSize(14);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(145, 33.5, 'CMR');
         doc.setFontSize(10);
         doc.text(159, 33, 'No:');
@@ -572,10 +576,10 @@ export default class extends Controller {
         // 1. NADAWCA
         doc.rect(14, 25, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 30, '1');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 27, 'Nadawca (nazwisko lub nazwa, adres, kraj)');
         doc.text(21, 28.8, 'Absender (Name, Anschrift, Land)');
         doc.text(21, 30.6, 'Sender (name, address, country)');
@@ -584,10 +588,10 @@ export default class extends Controller {
         // 2. ODBIORCA
         doc.rect(14, 49, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 54, '2');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 51, 'Odbiorca (nazwisko lub nazwa, adres, kraj)');
         doc.text(21, 52.8, 'Empfanger (Name, Anschrift, Land)');
         doc.text(21, 54.6, 'Consignee (name, address, country)');
@@ -596,10 +600,10 @@ export default class extends Controller {
         // 3. MIEJSCE PRZEZNACZENIA
         doc.rect(14, 73, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 78, '3');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 75, 'Miejsce przeznaczenia (miejscowosc, kraj)');
         doc.text(21, 76.8, 'Auslieferungsort des Gutes (Ort, Land)');
         doc.text(21, 78.6, 'Place of delivery of the goods (place, country)');
@@ -608,10 +612,10 @@ export default class extends Controller {
         // 4. MIEJSCE I DATA ZAŁADOWANIA
         doc.rect(14, 97, 91, 15);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 102, '4');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 99, 'Miejsce i data zaladowania (miejscowosc, kraj, data)');
         doc.text(21, 100.8, 'Ort und Tag der Ubernahme das Gutes (Ort, Land, Datum)');
         doc.text(21, 102.6, 'Place and date taking over the goods (place, country, data)');
@@ -620,10 +624,10 @@ export default class extends Controller {
         // 5. ZAŁĄCZONE DOKUMENTY
         doc.rect(14, 112, 91, 15);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 117, '5');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 114, 'Zalaczone dokumenty');
         doc.text(21, 115.8, 'Beigefugte Dokumente');
         doc.text(21, 117.6, 'Documents attached');
@@ -635,10 +639,10 @@ export default class extends Controller {
 
         // 6.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 133, '6');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 130, 'Cechy i numery');
         doc.text(21, 131.8, 'Kennzeichen und Nammern');
         doc.text(21, 133.6, 'Marks and Nos');
@@ -649,10 +653,10 @@ export default class extends Controller {
 
         // 7.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(46, 133, '7');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(50, 130, 'Ilosc sztuk');
         doc.text(50, 131.8, 'Anzahl der Packstucke');
         doc.text(50, 133.6, 'Number of packages');
@@ -663,10 +667,10 @@ export default class extends Controller {
 
         // 8.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(75, 133, '8');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(79, 130, 'Sposob opakowania');
         doc.text(79, 131.8, 'Art der Verpackung');
         doc.text(79, 133.6, 'Method of packing');
@@ -677,10 +681,10 @@ export default class extends Controller {
 
         // 9.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(101, 133, '9');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(105, 130, 'Rodzaj towaru');
         doc.text(105, 131.8, 'Bezeichnung des Gutes');
         doc.text(105, 133.6, 'Nature of the goods');
@@ -690,10 +694,10 @@ export default class extends Controller {
         // 10. NR STATYSTYCZNY
         doc.rect(127, 127, 23, 53);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(128, 133, '10');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(134, 130, 'Numer statystyczny');
         doc.text(134, 131.8, 'Statistiknummer');
         doc.text(134, 133.6, 'Statistical number');
@@ -702,10 +706,10 @@ export default class extends Controller {
         // 11. WAGA BRUTTO
         doc.rect(150, 127, 23, 53);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(151, 133, '11');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(157, 130, 'Waga brutto w kg');
         doc.text(157, 131.8, 'Bruttogewicht in kg');
         doc.text(157, 133.6, 'Groos weight in kg');
@@ -714,10 +718,10 @@ export default class extends Controller {
         // 12. OBJĘTOŚĆ
         doc.rect(173, 127, 23, 53);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(174, 133, '12');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(180, 130, 'Objetosc w m3');
         doc.text(180, 131.8, 'Umfang m3');
         doc.text(180, 133.6, 'Volume in m3');
@@ -726,10 +730,10 @@ export default class extends Controller {
         // 13. INSTRUKCJE NADAWCY
         doc.rect(14, 187, 88, 42);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 192, '13');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 189, 'Instrukcje nadawcy');
         doc.text(21, 190.8, 'Anweisungen des Absenders');
         doc.text(21, 192.6, 'Senders instructions');
@@ -738,10 +742,10 @@ export default class extends Controller {
         // 14. POSTANOWIENIA ODNOŚNIE PRZEWOŹNEGO
         doc.rect(14, 229, 88, 14);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 234, '14');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 231, 'Postanowienia odnosnie przewoznego');
         doc.text(21, 232.8, 'Frechtzahlungsanweisungen');
         doc.text(21, 234.6, 'Instruction as to payment for carriage');
@@ -752,10 +756,10 @@ export default class extends Controller {
         // 15. ZAPŁATA
         doc.rect(102, 243, 94, 9);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(103, 248, '15');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(110, 246, 'Zaplata');
         doc.text(110, 247.8, 'Ruckerstattung');
         doc.text(110, 249.6, 'Cash on delivery');
@@ -767,12 +771,12 @@ export default class extends Controller {
         doc.setLineWidth(thin);
         doc.rect(105, 49, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(106, 54, '16');
         doc.setFontSize(10);
         doc.text(112, 71.5, 'NR REJ.:');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(112, 51, 'Przewoznik (nazwisko lub nazwa, adres, kraj)');
         doc.text(112, 52.8, 'Frachtfuhrer (Name, Anschrift, Land)');
         doc.text(112, 54.6, 'Carrier (name, address, country)');
@@ -781,10 +785,10 @@ export default class extends Controller {
         // 17. KOLEJNI PRZEWOŹNICY
         doc.rect(105, 73, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(106, 78, '17');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(112, 75, 'Kolejni przewoznicy (nazwisko lub nazwa, adres, kraj)');
         doc.text(112, 76.8, 'Nachfolgende Frachtfuhrer (Name, Anschrift, Land)');
         doc.text(112, 78.6, 'Successive carriers (name, address, country)');
@@ -793,10 +797,10 @@ export default class extends Controller {
         // 18. ZASTRZEŻENIA I UWAGI PRZEWOŹNIKA
         doc.rect(105, 97, 91, 30);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(106, 102, '18');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(112, 99, 'Zastrzezenia i uwagi przewoznika');
         doc.text(112, 100.8, 'Vorbehalte und Bemerkungen der Frachtfuhrer');
         doc.text(112, 102.6, 'Carrier’s reservations and observations');
@@ -805,10 +809,10 @@ export default class extends Controller {
         // 19. POSTANOWIENIA SPECJALNE
         doc.rect(102, 187, 94, 22);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(103, 192, '19');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(110, 189, 'Postanowienia specjalne');
         doc.text(110, 190.8, 'Besondere Vereinbarungen');
         doc.text(110, 192.6, 'Special agreements');
@@ -836,10 +840,10 @@ export default class extends Controller {
         doc.rect(150, 216, 12, 27);
 
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(103, 214, '20');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(110, 211, 'Do zaplacenia');
         doc.text(110, 212.8, 'Zu zahlen vom');
         doc.text(110, 214.6, 'To be paid by');
@@ -876,10 +880,10 @@ export default class extends Controller {
         doc.setLineWidth(thin);
         doc.rect(14, 243, 88, 9);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 248, '21');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 245, 'Wystawiono w');
         doc.text(21, 246.8, 'Ausgefertigt in');
         doc.text(21, 248.6, 'Established in');
@@ -891,10 +895,10 @@ export default class extends Controller {
         // 22. PODPIS I STEMPEL NADAWCY
         doc.rect(14, 252, 60, 35);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 257, '22');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(16, 281.6, 'Podpis i stempel nadawcy');
         doc.text(16, 283.4, 'Unterschrift und Stempel des Absenders');
         doc.text(16, 285.2, 'Signature and stamp of the sender');
@@ -904,10 +908,10 @@ export default class extends Controller {
         doc.setLineWidth(fat);
         doc.rect(74, 252, 60, 35);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(75, 257, '23');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(76, 281.6, 'Podpis i stempel przewoznika');
         doc.text(76, 283.4, 'Unterschrift und Stempel des Frachtfuhrers');
         doc.text(76, 285.2, 'Signature and stamp of the carrier');
@@ -917,10 +921,10 @@ export default class extends Controller {
         doc.setLineWidth(thin);
         doc.rect(134, 252, 62, 35);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(136, 257, '24');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(142, 255, 'Przesylke otrzymano / Gut empfangen');
         doc.text(142, 256.8, '/Goods received');
         doc.text(136, 261, 'Miejscowosc');
@@ -954,7 +958,7 @@ export default class extends Controller {
         doc.text(198.4, 90, '* In case of dangerous goods mention, besides the possible certi fication, on the last line of the column the particulars of the class, the number and the letter, if any.', null, -90);
 
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(11.5, 191.5, '1 - 15', null, 90);
         doc.text(11.5, 163, '19 + 20 + 22', null, 90);
 
@@ -963,7 +967,7 @@ export default class extends Controller {
 
 
         doc.setFontSize(8);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.setTextColor(1, 1, 1);
         doc.text(21, 35, document.getElementById("senderaddress").value);
         doc.text(166, 33, document.getElementById("cmrnumber").value);
@@ -1041,7 +1045,7 @@ export default class extends Controller {
         doc.setTextColor(0, 169, 79);
         doc.setFontSize(28);
 
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(7, 25, '3');
         doc.setFontSize(6.5);
         doc.text(14, 20, 'Egzemplarz dla przewoznika');
@@ -1053,7 +1057,7 @@ export default class extends Controller {
 
         // CMR - CONSIGNMENT NOTE
         doc.rect(105, 25, 91, 24);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.setFontSize(5.5);
         doc.text(108, 27, 'MIEDZYNARODOWY SAMOCHODOWY LIST PRZEWOZOWY');
         doc.text(108, 29, 'INTERNATIONALER FRACHTBRIEF');
@@ -1071,7 +1075,7 @@ export default class extends Controller {
         doc.text(154, 47.2, 'goods by road (CMR)');
 
         doc.setFontSize(14);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(145, 33.5, 'CMR');
         doc.setFontSize(10);
         doc.text(159, 33, 'No:');
@@ -1080,10 +1084,10 @@ export default class extends Controller {
         // 1. NADAWCA
         doc.rect(14, 25, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 30, '1');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 27, 'Nadawca (nazwisko lub nazwa, adres, kraj)');
         doc.text(21, 28.8, 'Absender (Name, Anschrift, Land)');
         doc.text(21, 30.6, 'Sender (name, address, country)');
@@ -1092,10 +1096,10 @@ export default class extends Controller {
         // 2. ODBIORCA
         doc.rect(14, 49, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 54, '2');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 51, 'Odbiorca (nazwisko lub nazwa, adres, kraj)');
         doc.text(21, 52.8, 'Empfanger (Name, Anschrift, Land)');
         doc.text(21, 54.6, 'Consignee (name, address, country)');
@@ -1104,10 +1108,10 @@ export default class extends Controller {
         // 3. MIEJSCE PRZEZNACZENIA
         doc.rect(14, 73, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 78, '3');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 75, 'Miejsce przeznaczenia (miejscowosc, kraj)');
         doc.text(21, 76.8, 'Auslieferungsort des Gutes (Ort, Land)');
         doc.text(21, 78.6, 'Place of delivery of the goods (place, country)');
@@ -1116,10 +1120,10 @@ export default class extends Controller {
         // 4. MIEJSCE I DATA ZAŁADOWANIA
         doc.rect(14, 97, 91, 15);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 102, '4');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 99, 'Miejsce i data zaladowania (miejscowosc, kraj, data)');
         doc.text(21, 100.8, 'Ort und Tag der Ubernahme das Gutes (Ort, Land, Datum)');
         doc.text(21, 102.6, 'Place and date taking over the goods (place, country, data)');
@@ -1128,10 +1132,10 @@ export default class extends Controller {
         // 5. ZAŁĄCZONE DOKUMENTY
         doc.rect(14, 112, 91, 15);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 117, '5');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 114, 'Zalaczone dokumenty');
         doc.text(21, 115.8, 'Beigefugte Dokumente');
         doc.text(21, 117.6, 'Documents attached');
@@ -1143,10 +1147,10 @@ export default class extends Controller {
 
         // 6.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 133, '6');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 130, 'Cechy i numery');
         doc.text(21, 131.8, 'Kennzeichen und Nammern');
         doc.text(21, 133.6, 'Marks and Nos');
@@ -1157,10 +1161,10 @@ export default class extends Controller {
 
         // 7.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(46, 133, '7');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(50, 130, 'Ilosc sztuk');
         doc.text(50, 131.8, 'Anzahl der Packstucke');
         doc.text(50, 133.6, 'Number of packages');
@@ -1171,10 +1175,10 @@ export default class extends Controller {
 
         // 8.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(75, 133, '8');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(79, 130, 'Sposob opakowania');
         doc.text(79, 131.8, 'Art der Verpackung');
         doc.text(79, 133.6, 'Method of packing');
@@ -1185,10 +1189,10 @@ export default class extends Controller {
 
         // 9.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(101, 133, '9');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(105, 130, 'Rodzaj towaru');
         doc.text(105, 131.8, 'Bezeichnung des Gutes');
         doc.text(105, 133.6, 'Nature of the goods');
@@ -1198,10 +1202,10 @@ export default class extends Controller {
         // 10. NR STATYSTYCZNY
         doc.rect(127, 127, 23, 53);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(128, 133, '10');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(134, 130, 'Numer statystyczny');
         doc.text(134, 131.8, 'Statistiknummer');
         doc.text(134, 133.6, 'Statistical number');
@@ -1210,10 +1214,10 @@ export default class extends Controller {
         // 11. WAGA BRUTTO
         doc.rect(150, 127, 23, 53);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(151, 133, '11');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(157, 130, 'Waga brutto w kg');
         doc.text(157, 131.8, 'Bruttogewicht in kg');
         doc.text(157, 133.6, 'Groos weight in kg');
@@ -1222,10 +1226,10 @@ export default class extends Controller {
         // 12. OBJĘTOŚĆ
         doc.rect(173, 127, 23, 53);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(174, 133, '12');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(180, 130, 'Objetosc w m3');
         doc.text(180, 131.8, 'Umfang m3');
         doc.text(180, 133.6, 'Volume in m3');
@@ -1234,10 +1238,10 @@ export default class extends Controller {
         // 13. INSTRUKCJE NADAWCY
         doc.rect(14, 187, 88, 42);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 192, '13');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 189, 'Instrukcje nadawcy');
         doc.text(21, 190.8, 'Anweisungen des Absenders');
         doc.text(21, 192.6, 'Senders instructions');
@@ -1246,10 +1250,10 @@ export default class extends Controller {
         // 14. POSTANOWIENIA ODNOŚNIE PRZEWOŹNEGO
         doc.rect(14, 229, 88, 14);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 234, '14');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 231, 'Postanowienia odnosnie przewoznego');
         doc.text(21, 232.8, 'Frechtzahlungsanweisungen');
         doc.text(21, 234.6, 'Instruction as to payment for carriage');
@@ -1260,10 +1264,10 @@ export default class extends Controller {
         // 15. ZAPŁATA
         doc.rect(102, 243, 94, 9);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(103, 248, '15');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(110, 246, 'Zaplata');
         doc.text(110, 247.8, 'Ruckerstattung');
         doc.text(110, 249.6, 'Cash on delivery');
@@ -1275,12 +1279,12 @@ export default class extends Controller {
         doc.setLineWidth(thin);
         doc.rect(105, 49, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(106, 54, '16');
         doc.setFontSize(10);
         doc.text(112, 71.5, 'NR REJ.:');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(112, 51, 'Przewoznik (nazwisko lub nazwa, adres, kraj)');
         doc.text(112, 52.8, 'Frachtfuhrer (Name, Anschrift, Land)');
         doc.text(112, 54.6, 'Carrier (name, address, country)');
@@ -1289,10 +1293,10 @@ export default class extends Controller {
         // 17. KOLEJNI PRZEWOŹNICY
         doc.rect(105, 73, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(106, 78, '17');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(112, 75, 'Kolejni przewoznicy (nazwisko lub nazwa, adres, kraj)');
         doc.text(112, 76.8, 'Nachfolgende Frachtfuhrer (Name, Anschrift, Land)');
         doc.text(112, 78.6, 'Successive carriers (name, address, country)');
@@ -1301,10 +1305,10 @@ export default class extends Controller {
         // 18. ZASTRZEŻENIA I UWAGI PRZEWOŹNIKA
         doc.rect(105, 97, 91, 30);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(106, 102, '18');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(112, 99, 'Zastrzezenia i uwagi przewoznika');
         doc.text(112, 100.8, 'Vorbehalte und Bemerkungen der Frachtfuhrer');
         doc.text(112, 102.6, 'Carrier’s reservations and observations');
@@ -1313,10 +1317,10 @@ export default class extends Controller {
         // 19. POSTANOWIENIA SPECJALNE
         doc.rect(102, 187, 94, 22);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(103, 192, '19');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(110, 189, 'Postanowienia specjalne');
         doc.text(110, 190.8, 'Besondere Vereinbarungen');
         doc.text(110, 192.6, 'Special agreements');
@@ -1344,10 +1348,10 @@ export default class extends Controller {
         doc.rect(150, 216, 12, 27);
 
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(103, 214, '20');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(110, 211, 'Do zaplacenia');
         doc.text(110, 212.8, 'Zu zahlen vom');
         doc.text(110, 214.6, 'To be paid by');
@@ -1384,10 +1388,10 @@ export default class extends Controller {
         doc.setLineWidth(thin);
         doc.rect(14, 243, 88, 9);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 248, '21');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 245, 'Wystawiono w');
         doc.text(21, 246.8, 'Ausgefertigt in');
         doc.text(21, 248.6, 'Established in');
@@ -1399,10 +1403,10 @@ export default class extends Controller {
         // 22. PODPIS I STEMPEL NADAWCY
         doc.rect(14, 252, 60, 35);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 257, '22');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(16, 281.6, 'Podpis i stempel nadawcy');
         doc.text(16, 283.4, 'Unterschrift und Stempel des Absenders');
         doc.text(16, 285.2, 'Signature and stamp of the sender');
@@ -1412,10 +1416,10 @@ export default class extends Controller {
         doc.setLineWidth(fat);
         doc.rect(74, 252, 60, 35);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(75, 257, '23');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(76, 281.6, 'Podpis i stempel przewoznika');
         doc.text(76, 283.4, 'Unterschrift und Stempel des Frachtfuhrers');
         doc.text(76, 285.2, 'Signature and stamp of the carrier');
@@ -1425,10 +1429,10 @@ export default class extends Controller {
         doc.setLineWidth(thin);
         doc.rect(134, 252, 62, 35);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(136, 257, '24');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(142, 255, 'Przesylke otrzymano / Gut empfangen');
         doc.text(142, 256.8, '/Goods received');
         doc.text(136, 261, 'Miejscowosc');
@@ -1462,7 +1466,7 @@ export default class extends Controller {
         doc.text(198.4, 90, '* In case of dangerous goods mention, besides the possible certi fication, on the last line of the column the particulars of the class, the number and the letter, if any.', null, -90);
 
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(11.5, 191.5, '1 - 15', null, 90);
         doc.text(11.5, 163, '19 + 20 + 22', null, 90);
 
@@ -1471,7 +1475,7 @@ export default class extends Controller {
 
 
         doc.setFontSize(8);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.setTextColor(1, 1, 1);
         doc.text(21, 35, document.getElementById("senderaddress").value);
         doc.text(166, 33, document.getElementById("cmrnumber").value);
@@ -1547,9 +1551,9 @@ export default class extends Controller {
 
         doc.setTextColor(34, 30, 31);
         doc.setFontSize(28);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(7, 25, 'KOPIA');
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.setFontSize(6.5);
 
         doc.setFontSize(15.5);
@@ -1558,7 +1562,7 @@ export default class extends Controller {
 
         // CMR - CONSIGNMENT NOTE
         doc.rect(105, 25, 91, 24);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.setFontSize(5.5);
         doc.text(108, 27, 'MIEDZYNARODOWY SAMOCHODOWY LIST PRZEWOZOWY');
         doc.text(108, 29, 'INTERNATIONALER FRACHTBRIEF');
@@ -1576,7 +1580,7 @@ export default class extends Controller {
         doc.text(154, 47.2, 'goods by road (CMR)');
 
         doc.setFontSize(14);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(145, 33.5, 'CMR');
         doc.setFontSize(10);
         doc.text(159, 33, 'No:');
@@ -1585,10 +1589,10 @@ export default class extends Controller {
         // 1. NADAWCA
         doc.rect(14, 25, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 30, '1');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 27, 'Nadawca (nazwisko lub nazwa, adres, kraj)');
         doc.text(21, 28.8, 'Absender (Name, Anschrift, Land)');
         doc.text(21, 30.6, 'Sender (name, address, country)');
@@ -1597,10 +1601,10 @@ export default class extends Controller {
         // 2. ODBIORCA
         doc.rect(14, 49, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 54, '2');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 51, 'Odbiorca (nazwisko lub nazwa, adres, kraj)');
         doc.text(21, 52.8, 'Empfanger (Name, Anschrift, Land)');
         doc.text(21, 54.6, 'Consignee (name, address, country)');
@@ -1609,10 +1613,10 @@ export default class extends Controller {
         // 3. MIEJSCE PRZEZNACZENIA
         doc.rect(14, 73, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 78, '3');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 75, 'Miejsce przeznaczenia (miejscowosc, kraj)');
         doc.text(21, 76.8, 'Auslieferungsort des Gutes (Ort, Land)');
         doc.text(21, 78.6, 'Place of delivery of the goods (place, country)');
@@ -1621,10 +1625,10 @@ export default class extends Controller {
         // 4. MIEJSCE I DATA ZAŁADOWANIA
         doc.rect(14, 97, 91, 15);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 102, '4');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 99, 'Miejsce i data zaladowania (miejscowosc, kraj, data)');
         doc.text(21, 100.8, 'Ort und Tag der Ubernahme das Gutes (Ort, Land, Datum)');
         doc.text(21, 102.6, 'Place and date taking over the goods (place, country, data)');
@@ -1633,10 +1637,10 @@ export default class extends Controller {
         // 5. ZAŁĄCZONE DOKUMENTY
         doc.rect(14, 112, 91, 15);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 117, '5');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 114, 'Zalaczone dokumenty');
         doc.text(21, 115.8, 'Beigefugte Dokumente');
         doc.text(21, 117.6, 'Documents attached');
@@ -1648,10 +1652,10 @@ export default class extends Controller {
 
         // 6.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(17, 133, '6');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 130, 'Cechy i numery');
         doc.text(21, 131.8, 'Kennzeichen und Nammern');
         doc.text(21, 133.6, 'Marks and Nos');
@@ -1662,10 +1666,10 @@ export default class extends Controller {
 
         // 7.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(46, 133, '7');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(50, 130, 'Ilosc sztuk');
         doc.text(50, 131.8, 'Anzahl der Packstucke');
         doc.text(50, 133.6, 'Number of packages');
@@ -1676,10 +1680,10 @@ export default class extends Controller {
 
         // 8.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(75, 133, '8');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(79, 130, 'Sposob opakowania');
         doc.text(79, 131.8, 'Art der Verpackung');
         doc.text(79, 133.6, 'Method of packing');
@@ -1690,10 +1694,10 @@ export default class extends Controller {
 
         // 9.
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(101, 133, '9');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(105, 130, 'Rodzaj towaru');
         doc.text(105, 131.8, 'Bezeichnung des Gutes');
         doc.text(105, 133.6, 'Nature of the goods');
@@ -1703,10 +1707,10 @@ export default class extends Controller {
         // 10. NR STATYSTYCZNY
         doc.rect(127, 127, 23, 53);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(128, 133, '10');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(134, 130, 'Numer statystyczny');
         doc.text(134, 131.8, 'Statistiknummer');
         doc.text(134, 133.6, 'Statistical number');
@@ -1715,10 +1719,10 @@ export default class extends Controller {
         // 11. WAGA BRUTTO
         doc.rect(150, 127, 23, 53);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(151, 133, '11');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(157, 130, 'Waga brutto w kg');
         doc.text(157, 131.8, 'Bruttogewicht in kg');
         doc.text(157, 133.6, 'Groos weight in kg');
@@ -1727,10 +1731,10 @@ export default class extends Controller {
         // 12. OBJĘTOŚĆ
         doc.rect(173, 127, 23, 53);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(174, 133, '12');
         doc.setFontSize(5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(180, 130, 'Objetosc w m3');
         doc.text(180, 131.8, 'Umfang m3');
         doc.text(180, 133.6, 'Volume in m3');
@@ -1739,10 +1743,10 @@ export default class extends Controller {
         // 13. INSTRUKCJE NADAWCY
         doc.rect(14, 187, 88, 42);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 192, '13');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 189, 'Instrukcje nadawcy');
         doc.text(21, 190.8, 'Anweisungen des Absenders');
         doc.text(21, 192.6, 'Senders instructions');
@@ -1751,10 +1755,10 @@ export default class extends Controller {
         // 14. POSTANOWIENIA ODNOŚNIE PRZEWOŹNEGO
         doc.rect(14, 229, 88, 14);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 234, '14');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 231, 'Postanowienia odnosnie przewoznego');
         doc.text(21, 232.8, 'Frechtzahlungsanweisungen');
         doc.text(21, 234.6, 'Instruction as to payment for carriage');
@@ -1765,10 +1769,10 @@ export default class extends Controller {
         // 15. ZAPŁATA
         doc.rect(102, 243, 94, 9);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(103, 248, '15');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(110, 246, 'Zaplata');
         doc.text(110, 247.8, 'Ruckerstattung');
         doc.text(110, 249.6, 'Cash on delivery');
@@ -1780,12 +1784,12 @@ export default class extends Controller {
         doc.setLineWidth(thin);
         doc.rect(105, 49, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(106, 54, '16');
         doc.setFontSize(10);
         doc.text(112, 71.5, 'NR REJ.:');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(112, 51, 'Przewoznik (nazwisko lub nazwa, adres, kraj)');
         doc.text(112, 52.8, 'Frachtfuhrer (Name, Anschrift, Land)');
         doc.text(112, 54.6, 'Carrier (name, address, country)');
@@ -1794,10 +1798,10 @@ export default class extends Controller {
         // 17. KOLEJNI PRZEWOŹNICY
         doc.rect(105, 73, 91, 24);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(106, 78, '17');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(112, 75, 'Kolejni przewoznicy (nazwisko lub nazwa, adres, kraj)');
         doc.text(112, 76.8, 'Nachfolgende Frachtfuhrer (Name, Anschrift, Land)');
         doc.text(112, 78.6, 'Successive carriers (name, address, country)');
@@ -1806,10 +1810,10 @@ export default class extends Controller {
         // 18. ZASTRZEŻENIA I UWAGI PRZEWOŹNIKA
         doc.rect(105, 97, 91, 30);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(106, 102, '18');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(112, 99, 'Zastrzezenia i uwagi przewoznika');
         doc.text(112, 100.8, 'Vorbehalte und Bemerkungen der Frachtfuhrer');
         doc.text(112, 102.6, 'Carrier’s reservations and observations');
@@ -1818,10 +1822,10 @@ export default class extends Controller {
         // 19. POSTANOWIENIA SPECJALNE
         doc.rect(102, 187, 94, 22);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(103, 192, '19');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(110, 189, 'Postanowienia specjalne');
         doc.text(110, 190.8, 'Besondere Vereinbarungen');
         doc.text(110, 192.6, 'Special agreements');
@@ -1849,10 +1853,10 @@ export default class extends Controller {
         doc.rect(150, 216, 12, 27);
 
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(103, 214, '20');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(110, 211, 'Do zaplacenia');
         doc.text(110, 212.8, 'Zu zahlen vom');
         doc.text(110, 214.6, 'To be paid by');
@@ -1889,10 +1893,10 @@ export default class extends Controller {
         doc.setLineWidth(thin);
         doc.rect(14, 243, 88, 9);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 248, '21');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(21, 245, 'Wystawiono w');
         doc.text(21, 246.8, 'Ausgefertigt in');
         doc.text(21, 248.6, 'Established in');
@@ -1904,10 +1908,10 @@ export default class extends Controller {
         // 22. PODPIS I STEMPEL NADAWCY
         doc.rect(14, 252, 60, 35);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(15, 257, '22');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(16, 281.6, 'Podpis i stempel nadawcy');
         doc.text(16, 283.4, 'Unterschrift und Stempel des Absenders');
         doc.text(16, 285.2, 'Signature and stamp of the sender');
@@ -1917,10 +1921,10 @@ export default class extends Controller {
         doc.setLineWidth(fat);
         doc.rect(74, 252, 60, 35);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(75, 257, '23');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(76, 281.6, 'Podpis i stempel przewoznika');
         doc.text(76, 283.4, 'Unterschrift und Stempel des Frachtfuhrers');
         doc.text(76, 285.2, 'Signature and stamp of the carrier');
@@ -1930,10 +1934,10 @@ export default class extends Controller {
         doc.setLineWidth(thin);
         doc.rect(134, 252, 62, 35);
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(136, 257, '24');
         doc.setFontSize(5.5);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.text(142, 255, 'Przesylke otrzymano / Gut empfangen');
         doc.text(142, 256.8, '/Goods received');
         doc.text(136, 261, 'Miejscowosc');
@@ -1967,7 +1971,7 @@ export default class extends Controller {
         doc.text(198.4, 90, '* In case of dangerous goods mention, besides the possible certi fication, on the last line of the column the particulars of the class, the number and the letter, if any.', null, -90);
 
         doc.setFontSize(13);
-        doc.setFontType("bold");
+        doc.setFont(undefined, "bold")
         doc.text(11.5, 191.5, '1 - 15', null, 90);
         doc.text(11.5, 163, '19 + 20 + 22', null, 90);
 
@@ -1976,7 +1980,7 @@ export default class extends Controller {
 
 
         doc.setFontSize(8);
-        doc.setFontType("normal");
+        doc.setFont(undefined, "normal")
         doc.setTextColor(1, 1, 1);
         doc.text(21, 35, document.getElementById("senderaddress").value);
         doc.text(166, 33, document.getElementById("cmrnumber").value);

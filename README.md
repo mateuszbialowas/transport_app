@@ -59,7 +59,7 @@ Gross weight in kg
 Volume in m³
 Sender's instructions
 Cash on delivery
-Instructions as to payment carriage
+Instructions as to payment carrier
 Carrier
 Successive carriers
 Reservations and remarks by carriers
@@ -77,7 +77,7 @@ rails g scaffold document cmr_number sender_name sender_address sender_postal_co
                                      place_and_date_of_taking_over_city place_and_date_of_taking_over_date:date place_and_date_of_taking_over_country
                                      documents_attached documents_attached_2 documents_attached_3
                                      sender_instructions
-                                     instructions_as_to_payment_for_carriage carriage_paid carriage_forward
+                                     instructions_as_to_payment_for_carrier carrier_paid carrier_forward
                                      cash_on_delivery
                                      carrier_name carrier_address carrier_postal_code carrier_city carrier_country carrier_vat carrier_phone carrier_eori carrier_truck_plates
                                      successive_carriers_name successive_carriers_address successive_carriers_postal_code successive_carriers_city successive_carriers_country successive_carriers_vat successive_carriers_phone successive_carriers_eori successive_carriers_truck_plates
@@ -85,4 +85,4 @@ rails g scaffold document cmr_number sender_name sender_address sender_postal_co
 
 
 
-rails g scaffold document cmr_number sender consignee place_of_delivery place_and_date_of_taking_over_the_goods documents_attached sender_instructions instructions_as_to_payment_for_carriage cod carriage successive_carrier carriers_reservations_and_observations special_agreements to_be_paid_by established_in established_on signature_of_the_sender signature_of_the_carrier signature_of_the_consignee
+rails g scaffold document cmr_number sender consignee place_of_delivery place_and_date_of_taking_over_the_goods documents_attached sender_instructions instructions_as_to_payment_for_carrier cod carrier successive_carrier carriers_reservations_and_observations special_agreements to_be_paid_by established_in established_on signature_of_the_sender signature_of_the_carrier signature_of_the_consignee

@@ -67,6 +67,6 @@ class DocumentsController < AuthenticatedController
   # Only allow a list of trusted parameters through.
   def document_params
     params.require(:document).permit(:cmr_number, :sender, :consignee, :place_of_delivery,
-                                     :place_and_date_of_taking_over_the_goods, :documents_attached, :sender_instructions, :instructions_as_to_payment_for_carriage, :cod, :carriage, :successive_carrier, :carriers_reservations_and_observations, :special_agreements, :to_be_paid_by, :established_in, :established_on, :signature_of_the_sender, :signature_of_the_carrier, :signature_of_the_consignee)
+                                     :place_and_date_of_taking_over_the_goods, :documents_attached, :sender_instructions, :instructions_as_to_payment_for_carrier, :cod, :carrier, :successive_carrier, :carriers_reservations_and_observations, :special_agreements, :to_be_paid_by, :established_in, :established_on, :signature_of_the_sender, :signature_of_the_carrier, :signature_of_the_consignee)
   end
 end

@@ -10,9 +10,9 @@ class CreateDocuments < ActiveRecord::Migration[7.1]
       t.string :place_and_date_of_taking_over_the_goods
       t.string :documents_attached
       t.string :sender_instructions
-      t.string :instructions_as_to_payment_for_carriage
+      t.string :instructions_as_to_payment_for_carrier
       t.string :cod
-      t.string :carriage
+      t.string :carrier
       t.string :successive_carrier
       t.string :carriers_reservations_and_observations
       t.string :special_agreements

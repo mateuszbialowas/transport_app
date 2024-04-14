@@ -1,0 +1,63 @@
+
+<%= simple_form_for(@document) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :cmr_number %>
+    <%= f.input :sender_1 %>
+    <%= f.input :consignee_2 %>
+    <%= f.input :delivery_place_3 %>
+    <%= f.input :taking_over_place_4 %>
+    <%= f.input :taking_over_date_4 %>
+    <%= f.input :documents_5 %>
+    <%= f.input :marks_6_1 %>
+    <%= f.input :number_7_1 %>
+    <%= f.input :method_8_1 %>
+    <%= f.input :nature_9_1 %>
+    <%= f.input :number_10_1 %>
+    <%= f.input :weight_11_1 %>
+    <%= f.input :volume_12_1 %>
+    <%= f.input :marks_6_2 %>
+    <%= f.input :number_7_2 %>
+    <%= f.input :method_8_2 %>
+    <%= f.input :nature_9_2 %>
+    <%= f.input :number_10_2 %>
+    <%= f.input :weight_11_2 %>
+    <%= f.input :volume_12_2 %>
+    <%= f.input :marks_6_3 %>
+    <%= f.input :number_7_3 %>
+    <%= f.input :method_8_3 %>
+    <%= f.input :nature_9_3 %>
+    <%= f.input :number_10_3 %>
+    <%= f.input :weight_11_3 %>
+    <%= f.input :volume_12_3 %>
+    <%= f.input :marks_6_4 %>
+    <%= f.input :number_7_4 %>
+    <%= f.input :method_8_4 %>
+    <%= f.input :nature_9_4 %>
+    <%= f.input :number_10_4 %>
+    <%= f.input :weight_11_4 %>
+    <%= f.input :volume_12_4 %>
+    <%= f.input :class_6 %>
+    <%= f.input :number_7 %>
+    <%= f.input :letter_8 %>
+    <%= f.input :adr_9 %>
+    <%= f.input :sender_instructions_13 %>
+    <%= f.input :carriage_instructions_14 %>
+    <%= f.input :carriage_paid_14 %>
+    <%= f.input :carriage_forward_14 %>
+    <%= f.input :cash_on_delivery_15 %>
+    <%= f.input :carrier_16 %>
+    <%= f.input :carriers_plates_16 %>
+    <%= f.input :successive_carriers_17 %>
+    <%= f.input :carriers_reservations_18 %>
+    <%= f.input :special_agreements_19 %>
+    <%= f.input :established_in_21 %>
+    <%= f.input :established_in_date_21 %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

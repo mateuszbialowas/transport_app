@@ -6,6 +6,5 @@
   <%= link_to "Edit this document", edit_document_path(@document) %> |
   <%= link_to "Back to documents", documents_path %>
 
-  <%= button_to "Destroy this document", @document, method: :delete %>
-  <%= button_tag "Save", data: {controller: "cmr", action: "cmr#save"} %>
+  <%= button_to "Destroy this document", @document, method: :delete, class: "btn btn-danger" %>
 </div>

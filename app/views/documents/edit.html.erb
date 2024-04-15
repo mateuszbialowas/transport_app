@@ -1,7 +1,7 @@
 <h1>Editing document</h1>
 
 <%= render "form", document: @document %>
-
+<%= button_tag "Save", data: {controller: "cmr", action: "cmr#save"} %>
 <br>
 
 <div>

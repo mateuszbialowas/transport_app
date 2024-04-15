@@ -1,14 +1,37 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Documents</h1>
+<h1>Dokumenty CMR</h1>
 
-<div id="documents">
-  <% @documents.each do |document| %>
-    <%= render document %>
-    <p>
-      <%= link_to "Show this document", document %>
-    </p>
-  <% end %>
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <p>Wszystkie dokumenty</p>
+  <%= link_to "Nowy dokument", new_document_path, class: 'btn btn-primary' %>
 </div>
 
-<%= link_to "New document", new_document_path %>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">CMR NR</th>
+    <th scope="col">DATA WYSTAWIENIA</th>
+    <th scope="col">ODBIORCA</th>
+    <th scope="col">PRZEWOŹNIK</th>
+    <th scope="col">TOWARY</th>
+    <th scope="col">ZAŁĄCZNIKI</th>
+    <th scope="col">AKCJA</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% documents.each do |document| %>
+    <tr>
+      <th scope="row"><%= document.id %></th>
+      <td><%= document.cmr_number %></td>
+      <td><%= l(document.created_at, format: :short) %></td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td><%= link_to "Zobacz", document %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

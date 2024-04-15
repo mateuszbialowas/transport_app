@@ -9,7 +9,8 @@
     <%= f.input :consignee_2 %>
     <%= f.input :delivery_place_3 %>
     <%= f.input :taking_over_place_4 %>
-    <%= f.input :taking_over_date_4 %>
+    <%#= f.input :taking_over_date_4, type: :date %>
+    <%= f.date_field :taking_over_date_4, as: :string %>
     <%= f.input :documents_5 %>
     <%= f.input :marks_6_1 %>
     <%= f.input :number_7_1 %>

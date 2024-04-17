@@ -37,3 +37,10 @@ Layout/LineLength:
 Lint/MissingSuper:
   Exclude:
     - "app/components/*.rb"
+
+Naming/VariableNumber:
+  Enabled: false
+
+
+Rails/I18nLocaleTexts:
+  Enabled: false

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class CreateDocuments < ActiveRecord::Migration[7.1]
-  def change
-    create_table :documents do |t|
+  def change # rubocop:disable Metrics/AbcSize
+    create_table :documents do |t| # rubocop:disable Metrics/BlockLength
       t.string :cmr_number
       t.text :sender_1
       t.text :consignee_2

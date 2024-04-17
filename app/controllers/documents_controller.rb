@@ -64,8 +64,17 @@ class DocumentsController < ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
-  def document_params
+  def document_params # rubocop:disable Metrics/MethodLength
     params.require(:document).permit(:cmr_number, :sender_1, :consignee_2, :delivery_place_3, :taking_over_place_4,
-                                     :taking_over_date_4, :documents_5, :marks_6_1, :number_7_1, :method_8_1, :nature_9_1, :number_10_1, :weight_11_1, :volume_12_1, :marks_6_2, :number_7_2, :method_8_2, :nature_9_2, :number_10_2, :weight_11_2, :volume_12_2, :marks_6_3, :number_7_3, :method_8_3, :nature_9_3, :number_10_3, :weight_11_3, :volume_12_3, :marks_6_4, :number_7_4, :method_8_4, :nature_9_4, :number_10_4, :weight_11_4, :volume_12_4, :class_6, :number_7, :letter_8, :adr_9, :sender_instructions_13, :carriage_instructions_14, :carriage_paid_14, :carriage_forward_14, :cash_on_delivery_15, :carrier_16, :carriers_plates_16, :successive_carriers_17, :carriers_reservations_18, :special_agreements_19, :established_in_21, :established_in_date_21)
+                                     :taking_over_date_4, :documents_5, :marks_6_1, :number_7_1, :method_8_1,
+                                     :nature_9_1, :number_10_1, :weight_11_1, :volume_12_1, :marks_6_2, :number_7_2,
+                                     :method_8_2, :nature_9_2, :number_10_2, :weight_11_2, :volume_12_2, :marks_6_3,
+                                     :number_7_3, :method_8_3, :nature_9_3, :number_10_3, :weight_11_3, :volume_12_3,
+                                     :marks_6_4, :number_7_4, :method_8_4, :nature_9_4, :number_10_4, :weight_11_4,
+                                     :volume_12_4, :class_6, :number_7, :letter_8, :adr_9, :sender_instructions_13,
+                                     :carriage_instructions_14, :carriage_paid_14, :carriage_forward_14,
+                                     :cash_on_delivery_15, :carrier_16, :carriers_plates_16, :successive_carriers_17,
+                                     :carriers_reservations_18, :special_agreements_19, :established_in_21,
+                                     :established_in_date_21)
   end
 end

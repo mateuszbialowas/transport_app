@@ -10,7 +10,8 @@
     <%= f.input :delivery_place_3 %>
     <%= f.input :taking_over_place_4 %>
     <%#= f.input :taking_over_date_4, type: :date %>
-    <%= f.date_field :taking_over_date_4, as: :string %>
+    <%= f.label :taking_over_date_4 %>
+    <%= f.date_field :taking_over_date_4 %>
     <%= f.input :documents_5 %>
     <%= f.input :marks_6_1 %>
     <%= f.input :number_7_1 %>
@@ -44,10 +45,12 @@
     <%= f.input :number_7 %>
     <%= f.input :letter_8 %>
     <%= f.input :adr_9 %>
-    <%= f.input :sender_instructions_13 %>
-    <%= f.input :carriage_instructions_14 %>
-    <%= f.input :carriage_paid_14 %>
-    <%= f.input :carriage_forward_14 %>
+    <div class="d-none">
+      <%= f.input :sender_instructions_13 %>
+      <%= f.input :carriage_instructions_14 %>
+      <%= f.input :carriage_paid_14 %>
+      <%= f.input :carriage_forward_14 %>
+    </div>
     <%= f.input :cash_on_delivery_15 %>
     <%= f.input :carrier_16 %>
     <%= f.input :carriers_plates_16 %>

@@ -120,6 +120,9 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    i18n_generators (2.2.2)
+      activerecord (>= 3.0.0)
+      railties (>= 3.0.0)
     io-console (0.7.2)
     irb (1.11.2)
       rdoc
@@ -334,6 +337,7 @@ DEPENDENCIES
   debug
   devise (~> 4.9)
   devise_invitable (~> 2.0)
+  i18n_generators
   jbuilder
   jsbundling-rails
   letter_opener

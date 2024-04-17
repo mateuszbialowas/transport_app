@@ -65,7 +65,7 @@ class DocumentsController < AuthenticatedController
 
   # Only allow a list of trusted parameters through.
   def document_params # rubocop:disable Metrics/MethodLength
-    params.require(:document).permit(:cmr_number, :sender_1, :consignee_2, :delivery_place_3, :taking_over_place_4,
+    params.require(:document).permit(:sender_1, :consignee_2, :delivery_place_3, :taking_over_place_4,
                                      :taking_over_date_4, :documents_5, :marks_6_1, :number_7_1, :method_8_1,
                                      :nature_9_1, :number_10_1, :weight_11_1, :volume_12_1, :marks_6_2, :number_7_2,
                                      :method_8_2, :nature_9_2, :number_10_2, :weight_11_2, :volume_12_2, :marks_6_3,

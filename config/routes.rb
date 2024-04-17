@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     authenticated :user do
       root 'static_pages#home'
       resources :documents
+
+      resources :calendar, only: [:index]
     end
 
     resources :users, only: [:index]

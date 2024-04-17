@@ -20,7 +20,7 @@ class DocumentsController < AuthenticatedController
 
   # POST /documents or /documents.json
   def create
-    @document = Document.new(document_params)
+    @document = Document.new(document_params.merge(cmr_number: Random.rand(1000..9999)))
 
     respond_to do |format|
       if @document.save
@@ -66,7 +66,7 @@ class DocumentsController < AuthenticatedController
   # Only allow a list of trusted parameters through.
   def document_params # rubocop:disable Metrics/MethodLength
     params.require(:document).permit(:sender_1, :consignee_2, :delivery_place_3, :taking_over_place_4,
-                                     :taking_over_date_4, :documents_5, :marks_6_1, :number_7_1, :method_8_1,
+                                     :taking_over_at_4, :documents_5, :marks_6_1, :number_7_1, :method_8_1,
                                      :nature_9_1, :number_10_1, :weight_11_1, :volume_12_1, :marks_6_2, :number_7_2,
                                      :method_8_2, :nature_9_2, :number_10_2, :weight_11_2, :volume_12_2, :marks_6_3,
                                      :number_7_3, :method_8_3, :nature_9_3, :number_10_3, :weight_11_3, :volume_12_3,

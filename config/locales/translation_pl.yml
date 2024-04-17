@@ -10,53 +10,53 @@ pl:
         carriage_forward_14: Postanowienia odnośnie przewoźnego
         carriage_instructions_14: Przewoźne nieopłacone
         carriage_paid_14: Przewoźne zapłacone
-        carrier_16: Przewoźnik 16  #g
-        carriers_plates_16: Płyty nośne 16  #g
-        carriers_reservations_18: Rezerwacje przewoźników 18  #g
-        cash_on_delivery_15: Płatność przy odbiorze 15  #g
-        class_6: Klasa 6  #g
+        carrier_16: Przewoźnik
+        carriers_plates_16: Tablice przewoźnika
+        carriers_reservations_18: Zastrzeżenia i uwagi przewoźnika
+        cash_on_delivery_15: Zapłata
+        class_6: Klasa
         cmr_number: Numer CMR  #g
         consignee_2: Odbiorca
         delivery_place_3: Miejsce przeznaczenia
-        documents_5: Dokumenty 5  #g
-        established_in_21: Założona w 21  #g
-        established_in_date_21: Założona w dniu 21  #g
-        letter_8: List 8  #g
-        marks_6_1: Znaki 6 1  #g
-        marks_6_2: Znaki 6 2  #g
-        marks_6_3: Znaki 6 3  #g
-        marks_6_4: Znaki 6 4  #g
-        method_8_1: Metoda 8 1  #g
-        method_8_2: Metoda 8 2  #g
-        method_8_3: Metoda 8 3  #g
-        method_8_4: Metoda 8 4  #g
-        nature_9_1: Natura 9 1  #g
-        nature_9_2: Natura 9 2  #g
-        nature_9_3: Natura 9 3  #g
-        nature_9_4: Natura 9 4  #g
-        number_10_1: Numer 10 1  #g
-        number_10_2: Numer 10 2  #g
-        number_10_3: Numer 10 3  #g
-        number_10_4: Numer 10 4  #g
-        number_7: Numer 7  #g
-        number_7_1: Numer 7 1  #g
-        number_7_2: Numer 7 2  #g
-        number_7_3: Numer 7 3  #g
-        number_7_4: Numer 7 4  #g
+        documents_5: Dokumenty
+        established_in_21: Wystawiono w
+        established_in_date_21: Wystawiono dnia
+        letter_8: Litera
+        marks_6_1: Cechy i numery
+        marks_6_2: Cechy i numery
+        marks_6_3: Cechy i numery
+        marks_6_4: Cechy i numery
+        method_8_1: Sposób opokowania
+        method_8_2: Sposób opokowania
+        method_8_3: Sposób opokowania
+        method_8_4: Sposób opokowania
+        nature_9_1: Rodzaj towaru
+        nature_9_2: Rodzaj towaru
+        nature_9_3: Rodzaj towaru
+        nature_9_4: Rodzaj towaru
+        number_10_1: Numer statystyczny
+        number_10_2: Numer statystyczny
+        number_10_3: Numer statystyczny
+        number_10_4: Numer statystyczny
+        number_7: Liczba
+        number_7_1: Ilośc sztuk
+        number_7_2: Ilośc sztuk
+        number_7_3: Ilośc sztuk
+        number_7_4: Ilośc sztuk
         sender_1: Nadawca
-        sender_instructions_13: Instrukcje nadawcy 13  #g
-        special_agreements_19: Porozumienia specjalne 19  #g
-        successive_carriers_17: Kolejni przewoźnicy 17  #g
-        taking_over_date_4: Data załadowania
+        sender_instructions_13: Instrukcje nadawcy
+        special_agreements_19: Postanowienia specjalne
+        successive_carriers_17: Kolejni przewoźnicy
+        taking_over_at_4: Data załadowania
         taking_over_place_4: Miejsce załadowania
-        volume_12_1: Tom 12 1  #g
-        volume_12_2: Tom 12 2  #g
-        volume_12_3: Tom 12 3  #g
-        volume_12_4: Tom 12 4  #g
-        weight_11_1: Waga 11 1  #g
-        weight_11_2: Waga 11 2  #g
-        weight_11_3: Waga 11 3  #g
-        weight_11_4: Waga 11 4  #g
+        volume_12_1: Objętość w m3
+        volume_12_2: Objętość w m3
+        volume_12_3: Objętość w m3
+        volume_12_4: Objętość w m3
+        weight_11_1: Waga brutto w kg
+        weight_11_2: Waga brutto w kg
+        weight_11_3: Waga brutto w kg
+        weight_11_4: Waga brutto w kg
 
       user:
         email: E-mail  #g

@@ -1,359 +1,40 @@
 <div id="<%= dom_id document %>">
   <p>
+    <%= content_tag :strong, Document.human_attribute_name(:cmr_number) %>
+
     <span id="cmr_number">
       <%= document.cmr_number %>
     </span>
   </p>
 
   <p>
-    <strong>Sender 1:</strong>
+    <%= content_tag :strong, Document.human_attribute_name(:sender_1) %>
     <%= document.sender_1 %>
   </p>
 
   <p>
-    <strong>Consignee 2:</strong>
+    <%= content_tag :strong, Document.human_attribute_name(:consignee_2) %>
     <span id="consignee_2">
     <%= document.consignee_2 %>
     </span>
   </p>
 
   <p>
-    <strong>Delivery place 3:</strong>
+    <%= content_tag :strong, Document.human_attribute_name(:delivery_place_3) %>
     <span id="delivery_place_3">
     <%= document.delivery_place_3 %>
     </span>
   </p>
 
   <p>
-    <strong>Taking over place 4:</strong>
+    <%= content_tag :strong, Document.human_attribute_name(:taking_over_place_4) %>
     <span id="taking_over_place_4">
     <%= document.taking_over_place_4 %>
     </span>
   </p>
 
   <p>
-    <strong>Taking over date 4:</strong>
-    <span id="taking_over_date_4">
-    <%= document.taking_over_date_4 %>
-    </span>
+    <%= content_tag :strong, Document.human_attribute_name(:taking_over_at_4) %>
+    <%= l document.taking_over_at_4, format: :short %>
   </p>
-
-  <p>
-    <strong>Documents 5:</strong>
-    <span id="documents_5">
-    <%= document.documents_5 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Marks 6 1:</strong>
-    <span id="marks_6_1">
-    <%= document.marks_6_1 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Number 7 1:</strong>
-    <span id="number_7_1">
-    <%= document.number_7_1 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Method 8 1:</strong>
-    <span id="method_8_1">
-    <%= document.method_8_1 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Nature 9 1:</strong>
-    <span id="nature_9_1">
-    <%= document.nature_9_1 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Number 10 1:</strong>
-    <span id="number_10_1">
-    <%= document.number_10_1 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Weight 11 1:</strong>
-    <span id="weight_11_1">
-    <%= document.weight_11_1 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Volume 12 1:</strong>
-    <span id="volume_12_1">
-    <%= document.volume_12_1 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Marks 6 2:</strong>
-    <%= document.marks_6_2 %>
-    <span id="marks_6_2">
-    <%= document.marks_6_2 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Number 7 2:</strong>
-    <span id="number_7_2">
-      <%= document.number_7_2 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Method 8 2:</strong>
-    <span id="method_8_2">
-    <%= document.method_8_2 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Nature 9 2:</strong>
-    <span id="nature_9_2">
-    <%= document.nature_9_2 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Number 10 2:</strong>
-    <span id="number_10_2">
-    <%= document.number_10_2 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Weight 11 2:</strong>
-    <span id="weight_11_2">
-    <%= document.weight_11_2 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Volume 12 2:</strong>
-    <span id="volume_12_2">
-    <%= document.volume_12_2 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Marks 6 3:</strong>
-    <span id="marks_6_3">
-    <%= document.marks_6_3 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Number 7 3:</strong>
-    <span id="number_7_3">
-    <%= document.number_7_3 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Method 8 3:</strong>
-    <span id="method_8_3">
-    <%= document.method_8_3 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Nature 9 3:</strong>
-    <span id="nature_9_3">
-    <%= document.nature_9_3 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Number 10 3:</strong>
-    <span id="number_10_3">
-    <%= document.number_10_3 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Weight 11 3:</strong>
-    <span id="weight_11_3">
-    <%= document.weight_11_3 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Volume 12 3:</strong>
-    <span id="volume_12_3">
-    <%= document.volume_12_3 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Marks 6 4:</strong>
-    <span id="marks_6_4">
-    <%= document.marks_6_4 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Number 7 4:</strong>
-    <span id="number_7_4">
-    <%= document.number_7_4 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Method 8 4:</strong>
-    <span id="method_8_4">
-    <%= document.method_8_4 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Nature 9 4:</strong>
-    <span id="nature_9_4">
-    <%= document.nature_9_4 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Number 10 4:</strong>
-    <%= document.number_10_4 %>
-    <span id="number_10_4">
-    <%= document.number_10_4 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Weight 11 4:</strong>
-    <%= document.weight_11_4 %>
-    <span id="weight_11_4">
-          <%= document.weight_11_4 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Volume 12 4:</strong>
-    <span id="volume_12_4">
-    <%= document.volume_12_4 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Class 6:</strong>
-    <span id="class_6">
-    <%= document.class_6 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Number 7:</strong>
-    <span id="number_7">
-    <%= document.number_7 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Letter 8:</strong>
-    <span id="letter_8">
-    <%= document.letter_8 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Adr 9:</strong>
-    <span id="adr_9">
-    <%= document.adr_9 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Sender instructions 13:</strong>
-    <span id="sender_instructions_13">
-    <%= document.sender_instructions_13 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Carriage instructions 14:</strong>
-    <span id="carriage_instructions_14">
-    <%= document.carriage_instructions_14 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Carriage paid 14:</strong>
-    <span id="carriage_paid_14">
-    <%= document.carriage_paid_14 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Carriage forward 14:</strong>
-    <span id="carriage_forward_14">
-    <%= document.carriage_forward_14 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Cash on delivery 15:</strong>
-    <span id="cash_on_delivery_15">
-          <%= document.cash_on_delivery_15 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Carrier 16:</strong>
-    <span id="carrier_16">
-    <%= document.carrier_16 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Carriers plates 16:</strong>
-    <span id="carriers_plates_16">
-    <%= document.carriers_plates_16 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Successive carriers 17:</strong>
-    <span id="successive_carriers_17">
-          <%= document.successive_carriers_17 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Carriers reservations 18:</strong>
-    <span id="carriers_reservations_18">
-    <%= document.carriers_reservations_18 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Special agreements 19:</strong>
-    <span id="special_agreements_19">
-          <%= document.special_agreements_19 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Established in 21:</strong>
-    <span id="established_in_21">
-    <%= document.established_in_21 %>
-    </span>
-  </p>
-
-  <p>
-    <strong>Established in date 21:</strong>
-    <span id="established_in_date_21">
-    <%= document.established_in_date_21 %>
-    </span>
-  </p>
-
 </div>

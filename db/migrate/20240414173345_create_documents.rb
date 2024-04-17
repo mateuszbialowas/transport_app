@@ -8,7 +8,7 @@ class CreateDocuments < ActiveRecord::Migration[7.1]
       t.text :consignee_2
       t.text :delivery_place_3
       t.text :taking_over_place_4
-      t.date :taking_over_date_4
+      t.datetime :taking_over_at_4
       t.text :documents_5
       t.string :marks_6_1
       t.string :number_7_1

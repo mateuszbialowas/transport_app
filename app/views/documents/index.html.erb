@@ -13,10 +13,10 @@
     <th scope="col">#</th>
     <th scope="col">CMR NR</th>
     <th scope="col">DATA WYSTAWIENIA</th>
+    <th scope="col">DATA ODBIORU</th>
     <th scope="col">ODBIORCA</th>
     <th scope="col">PRZEWOŹNIK</th>
     <th scope="col">TOWARY</th>
-    <th scope="col">ZAŁĄCZNIKI</th>
     <th scope="col">AKCJA</th>
   </tr>
   </thead>
@@ -26,7 +26,7 @@
       <th scope="row"><%= document.id %></th>
       <td><%= document.cmr_number %></td>
       <td><%= l(document.created_at, format: :short) %></td>
-      <td>...</td>
+      <td><%= l(document.taking_over_at_4, format: :short) %></td>
       <td>...</td>
       <td>...</td>
       <td>...</td>

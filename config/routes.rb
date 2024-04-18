@@ -9,7 +9,11 @@ Rails.application.routes.draw do
       root 'static_pages#home'
       resources :documents
 
-      resources :calendar, only: [:index]
+      resources :calendar, only: [:index] do
+        collection do
+          get :events
+        end
+      end
     end
 
     resources :users, only: [:index]

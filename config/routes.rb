@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   devise_scope :user do
     authenticated :user do
       root 'static_pages#home'
-      resources :documents
+      resources :documents do
+        collection do
+          resources :available_hours, only: [:index]
+        end
+      end
 
       resources :calendar, only: [:index] do
         collection do

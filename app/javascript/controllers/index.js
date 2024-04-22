@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AvailableHoursController from "./available_hours_controller"
+application.register("available-hours", AvailableHoursController)
+
 import CalendarController from "./calendar_controller"
 application.register("calendar", CalendarController)
 

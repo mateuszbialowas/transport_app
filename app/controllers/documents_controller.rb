@@ -20,16 +20,14 @@ class DocumentsController < AuthenticatedController
 
   # POST /documents or /documents.json
   def create
-    @document = Document.new(document_params.merge(cmr_number: Random.rand(1000..9999)))
+    taking_over_at_4 = parse_taking_over_at_4
+    @document = Document.new(document_params.merge(cmr_number: Random.rand(1000..9999),
+                                                   taking_over_at_4:))
 
-    respond_to do |format|
-      if @document.save
-        format.html { redirect_to document_url(@document), notice: 'Document was successfully created.' }
-        format.json { render :show, status: :created, location: @document }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @document.errors, status: :unprocessable_entity }
-      end
+    if @document.save
+      redirect_to document_url(@document), notice: 'Document was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -66,7 +64,7 @@ class DocumentsController < AuthenticatedController
   # Only allow a list of trusted parameters through.
   def document_params # rubocop:disable Metrics/MethodLength
     params.require(:document).permit(:sender_1, :consignee_2, :delivery_place_3, :taking_over_place_4,
-                                     :taking_over_at_4, :documents_5, :marks_6_1, :number_7_1, :method_8_1,
+                                     :documents_5, :marks_6_1, :number_7_1, :method_8_1,
                                      :nature_9_1, :number_10_1, :weight_11_1, :volume_12_1, :marks_6_2, :number_7_2,
                                      :method_8_2, :nature_9_2, :number_10_2, :weight_11_2, :volume_12_2, :marks_6_3,
                                      :number_7_3, :method_8_3, :nature_9_3, :number_10_3, :weight_11_3, :volume_12_3,
@@ -75,6 +73,13 @@ class DocumentsController < AuthenticatedController
                                      :carriage_instructions_14, :carriage_paid_14, :carriage_forward_14,
                                      :cash_on_delivery_15, :carrier_16, :carriers_plates_16, :successive_carriers_17,
                                      :carriers_reservations_18, :special_agreements_19, :established_in_21,
-                                     :established_in_date_21)
+                                     :established_in_date_21, taking_over_at_4: %i[date time])
+  end
+
+  def parse_taking_over_at_4
+    return if document_params.dig(:taking_over_at_4,
+                                  :date).blank? || document_params.dig(:taking_over_at_4, :time).blank?
+
+    DateTime.parse("#{document_params[:taking_over_at_4][:date]} #{document_params[:taking_over_at_4][:time]}")
   end
 end

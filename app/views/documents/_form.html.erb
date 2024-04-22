@@ -1,3 +1,6 @@
+<% collection = ["9:30", "10:00", "10:30"] %>
+
+
 <%= simple_form_for(@document) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -7,7 +10,20 @@
     <%= f.input :consignee_2, input_html: { rows: 5 } %>
     <%= f.input :delivery_place_3 %>
     <%= f.input :taking_over_place_4 %>
-    <%= f.input :taking_over_at_4 %>
+
+    <% if @document.errors.include?(:taking_over_at_4) %>
+      <% @document.errors.full_messages_for(:taking_over_at_4).each do |message| %>
+        <p class="field_with_errors"><%= message %></p>
+      <% end %>
+    <% end %>
+
+    <div data-controller="available-hours">
+      <%= f.fields_for :taking_over_at_4 do |ff| %>
+        <%= ff.input :date, as: :string, input_html: { type: 'date' } %>
+        <%= ff.input :time, collection: collection %>
+      <% end %>
+    </div>
+
     <%= f.input :documents_5 %>
 
     <%= f.input :marks_6_1 %>

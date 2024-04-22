@@ -34,6 +34,7 @@ group :development do
   gem 'letter_opener'
   gem 'letter_opener_web'
   gem 'web-console'
+  gem 'i18n-tasks'
   # gem "rack-mini-profiler"
 end
 

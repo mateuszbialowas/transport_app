@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       root 'static_pages#home'
       resources :documents do
         collection do
-          resources :available_hours, only: [:index]
+          resources :available_hours, only: [:index], module: :documents
         end
       end
 

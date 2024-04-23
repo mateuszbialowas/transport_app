@@ -1,2 +1,6 @@
-<h1>Documents::AvailableHours#index</h1>
-<p>Find me in app/views/documents/available_hours/index.html.erb</p>
+<%= simple_form_for(Document.new) do |f| %>
+  <%= turbo_stream.replace "taking_over_time_4_wrapper" do %>
+    <%= f.input :taking_over_time_4, collection:, wrapper_html: { id: "taking_over_time_4_wrapper" } %>
+  <% end %>
+<% end %>
+

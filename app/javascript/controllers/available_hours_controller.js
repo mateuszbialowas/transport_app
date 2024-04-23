@@ -1,12 +1,21 @@
 import { Controller } from "@hotwired/stimulus"
+import { get } from '@rails/request.js'
 
 // Connects to data-controller="available-hours"
 export default class extends Controller {
+  static targets = [ "dateInput" ]
+
   connect() {
-    console.log("Hello, Stimulus!", this.element)
+    this.dateInputTarget.addEventListener("change", () => {
+      this.fetch()
+    })
   }
 
-  fetch() {
-
+  async fetch() {
+    console.log("Fetching available hours")
+    await get("/documents/available_hours", {
+      responseKind: "turbo-stream",
+      query: { taking_over_date_4: this.dateInputTarget.value }
+    })
   }
 }

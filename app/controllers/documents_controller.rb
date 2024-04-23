@@ -20,9 +20,7 @@ class DocumentsController < AuthenticatedController
 
   # POST /documents or /documents.json
   def create
-    taking_over_at_4 = parse_taking_over_at_4
-    @document = Document.new(document_params.merge(cmr_number: Random.rand(1000..9999),
-                                                   taking_over_at_4:))
+    @document = Document.new(document_params.merge(cmr_number: Random.rand(1000..9999)))
 
     if @document.save
       redirect_to document_url(@document), notice: 'Document was successfully created.'
@@ -73,7 +71,7 @@ class DocumentsController < AuthenticatedController
                                      :carriage_instructions_14, :carriage_paid_14, :carriage_forward_14,
                                      :cash_on_delivery_15, :carrier_16, :carriers_plates_16, :successive_carriers_17,
                                      :carriers_reservations_18, :special_agreements_19, :established_in_21,
-                                     :established_in_date_21, taking_over_at_4: %i[date time])
+                                     :established_in_date_21, :taking_over_date_4, :taking_over_time_4)
   end
 
   def parse_taking_over_at_4

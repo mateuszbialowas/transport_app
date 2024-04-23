@@ -1,6 +1,3 @@
-<% collection = ["9:30", "10:00", "10:30"] %>
-
-
 <%= simple_form_for(@document) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -18,10 +15,8 @@
     <% end %>
 
     <div data-controller="available-hours">
-      <%= f.fields_for :taking_over_at_4 do |ff| %>
-        <%= ff.input :date, as: :string, input_html: { type: 'date' } %>
-        <%= ff.input :time, collection: collection %>
-      <% end %>
+      <%= f.input :taking_over_date_4, as: :string, input_html: { type: 'date', data: { available_hours_target: 'dateInput' } } %>
+      <%= f.input :taking_over_time_4, collection: [], disabled: !@document.persisted?, wrapper_html: { id: "taking_over_time_4_wrapper" } %>
     </div>
 
     <%= f.input :documents_5 %>

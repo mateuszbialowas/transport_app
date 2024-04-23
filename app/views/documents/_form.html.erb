@@ -1,4 +1,4 @@
-<%= simple_form_for(@document) do |f| %>
+<%= simple_form_for(document) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -10,7 +10,10 @@
 
     <div data-controller="available-hours">
       <%= f.input :taking_over_date, as: :string, input_html: { type: 'date', data: { available_hours_target: 'dateInput' } } %>
-      <%= f.input :taking_over_start_time, collection: [], disabled: !@document.persisted?, wrapper_html: { id: "taking_over_start_time_wrapper" } %>
+      <%= f.input :taking_over_start_time, collection: available_hours,
+                  selected: f.object.taking_over_start_time.try(:strftime, '%H:%M'),
+                  disabled: !document.persisted?,
+                  wrapper_html: { id: "taking_over_start_time_wrapper" } %>
     </div>
 
     <%= f.input :documents %>

@@ -7,62 +7,58 @@ class DocumentsController < AuthenticatedController
     render 'documents/index', locals: { documents: Document.all }
   end
 
-  # GET /documents/1 or /documents/1.json
-  def show; end
+  def show
+    render 'documents/show', locals: { document: @document }
+  end
 
-  # GET /documents/new
   def new
-    @document = Document.new
+    document = Document.new
+    render 'documents/new', locals: { document:, available_hours: [] }
   end
 
-  # GET /documents/1/edit
-  def edit; end
+  def edit
+    available_hours = ::AvailableHours.new(@document.taking_over_date, document: @document).call
+    render 'documents/edit', locals: { document: @document, available_hours: }
+  end
 
-  # POST /documents or /documents.json
   def create
-    @document = Document.new(document_params.merge(
-                               cmr_number: Random.rand(1000..9999),
-                               taking_over_end_time: Time.zone.parse(document_params[:taking_over_start_time]) + 30.minutes
-                             ))
+    parsed_end_time = Time.zone.parse(document_params[:taking_over_start_time])
+    parsed_end_time = parsed_end_time.present? ? parsed_end_time + 30.minutes : nil
 
-    if @document.save
-      redirect_to document_url(@document), notice: 'Document was successfully created.'
+    document = Document.new(document_params.merge(
+                              cmr_number: Random.rand(1000..9999),
+                              taking_over_end_time: parsed_end_time
+                            ))
+
+    if document.save
+      redirect_to document_url(document), notice: 'Document was successfully created.'
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity, locals: { document: }
     end
   end
 
-  # PATCH/PUT /documents/1 or /documents/1.json
   def update
-    respond_to do |format|
-      if @document.update(document_params)
-        format.html { redirect_to document_url(@document), notice: 'Document was successfully updated.' }
-        format.json { render :show, status: :ok, location: @document }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @document.errors, status: :unprocessable_entity }
-      end
+    if @document.update(document_params)
+      redirect_to document_url(document), notice: 'Document was successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity, locals: { document: }
     end
   end
 
-  # DELETE /documents/1 or /documents/1.json
   def destroy
     @document.destroy!
 
-    respond_to do |format|
-      format.html { redirect_to documents_url, notice: 'Document was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to documents_url, notice: 'Document was successfully destroyed.'
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_document
     @document = Document.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to documents_url, alert: 'Document not found.'
   end
 
-  # Only allow a list of trusted parameters through.
   def document_params # rubocop:disable Metrics/MethodLength
     params.require(:document).permit(:sender, :consignee, :delivery_place, :taking_over_place,
                                      :documents, :marks_6_1, :number_7_1, :method_8_1,

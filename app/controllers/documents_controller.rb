@@ -20,7 +20,10 @@ class DocumentsController < AuthenticatedController
 
   # POST /documents or /documents.json
   def create
-    @document = Document.new(document_params.merge(cmr_number: Random.rand(1000..9999)))
+    @document = Document.new(document_params.merge(
+                               cmr_number: Random.rand(1000..9999),
+                               taking_over_end_time: Time.zone.parse(document_params[:taking_over_start_time]) + 30.minutes
+                             ))
 
     if @document.save
       redirect_to document_url(@document), notice: 'Document was successfully created.'

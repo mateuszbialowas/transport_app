@@ -6,4 +6,8 @@ class Document < ApplicationRecord
   def taking_over_start_at
     DateTime.parse("#{taking_over_date} #{taking_over_start_time}")
   end
+
+  def taking_over_end_at
+    DateTime.parse("#{taking_over_date} #{taking_over_end_time}")
+  end
 end

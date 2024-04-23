@@ -7,7 +7,8 @@ class CalendarController < AuthenticatedController
     render json: Document.all.map { |document|
                    { title: document.cmr_number,
                      start: document.taking_over_at,
-                     end: document.taking_over_at + 30.minutes }
+                     end: document.taking_over_at + 30.minutes,
+                     url: document_path(document) }
                  }
   end
 end

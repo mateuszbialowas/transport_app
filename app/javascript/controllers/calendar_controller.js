@@ -27,7 +27,8 @@ export default class extends Controller {
         hour12: false
       },
       slotMinTime: '08:00:00',
-      slotMaxTime: '20:00:00'
+      slotMaxTime: '20:00:00',
+      timeZone: 'UTC'
     });
     calendar.render();
   }

@@ -74,10 +74,10 @@ class DocumentsController < AuthenticatedController
                                      :established_in_date_21, :taking_over_date, :taking_over_time)
   end
 
-  def parse_taking_over_at_4
-    return if document_params.dig(:taking_over_at_4,
-                                  :date).blank? || document_params.dig(:taking_over_at_4, :time).blank?
+  def parse_taking_over_at
+    return if document_params.dig(:taking_over_at,
+                                  :date).blank? || document_params.dig(:taking_over_at, :time).blank?
 
-    DateTime.parse("#{document_params[:taking_over_at_4][:date]} #{document_params[:taking_over_at_4][:time]}")
+    DateTime.parse("#{document_params[:taking_over_at][:date]} #{document_params[:taking_over_at][:time]}")
   end
 end

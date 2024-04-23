@@ -8,8 +8,8 @@
     <%= f.input :delivery_place %>
     <%= f.input :taking_over_place %>
 
-    <% if @document.errors.include?(:taking_over_at_4) %>
-      <% @document.errors.full_messages_for(:taking_over_at_4).each do |message| %>
+    <% if @document.errors.include?(:taking_over_at) %>
+      <% @document.errors.full_messages_for(:taking_over_at).each do |message| %>
         <p class="field_with_errors"><%= message %></p>
       <% end %>
     <% end %>

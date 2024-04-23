@@ -1,12 +1,82 @@
 ---
 pl:
   activerecord:
+    attributes:
+      document:
+        adr_9: Adr
+        carriage_forward_14: Postanowienia odnośnie przewoźnego
+        carriage_instructions_14: Przewoźne nieopłacone
+        carriage_paid_14: Przewoźne zapłacone
+        carrier_16: Przewoźnik
+        carriers_plates_16: Tablice przewoźnika
+        carriers_reservations_18: Zastrzeżenia i uwagi przewoźnika
+        cash_on_delivery_15: Zapłata
+        class_6: Klasa
+        cmr_number: Numer CMR
+        consignee: Odbiorca
+        delivery_place: Miejsce przeznaczenia
+        documents: Dokumenty
+        established_in_21: Wystawiono w
+        established_in_date_21: Wystawiono dnia
+        letter_8: Litera
+        marks_6_1: Cechy i numery
+        marks_6_2: Cechy i numery
+        marks_6_3: Cechy i numery
+        marks_6_4: Cechy i numery
+        method_8_1: Sposób opokowania
+        method_8_2: Sposób opokowania
+        method_8_3: Sposób opokowania
+        method_8_4: Sposób opokowania
+        nature_9_1: Rodzaj towaru
+        nature_9_2: Rodzaj towaru
+        nature_9_3: Rodzaj towaru
+        nature_9_4: Rodzaj towaru
+        number_10_1: Numer statystyczny
+        number_10_2: Numer statystyczny
+        number_10_3: Numer statystyczny
+        number_10_4: Numer statystyczny
+        number_7: Liczba
+        number_7_1: Ilośc sztuk
+        number_7_2: Ilośc sztuk
+        number_7_3: Ilośc sztuk
+        number_7_4: Ilośc sztuk
+        sender: Nadawca
+        sender_instructions_13: Instrukcje nadawcy
+        special_agreements_19: Postanowienia specjalne
+        successive_carriers_17: Kolejni przewoźnicy
+        taking_over_at_4: Data załadowania
+        taking_over_place: Miejsce załadowania
+        volume_12_1: Objętość w m3
+        volume_12_2: Objętość w m3
+        volume_12_3: Objętość w m3
+        volume_12_4: Objętość w m3
+        weight_11_1: Waga brutto w kg
+        weight_11_2: Waga brutto w kg
+        weight_11_3: Waga brutto w kg
+        weight_11_4: Waga brutto w kg
+      user:
+        email: E-mail
+        encrypted_password: Zaszyfrowane hasło
+        invitation_accepted_at: Zaproszenie przyjęte o godz
+        invitation_created_at: Zaproszenie utworzone o godz
+        invitation_limit: Limit zaproszeń
+        invitation_sent_at: Zaproszenie wysłane o godz
+        invitation_token: Token zaproszenia
+        invited_by: :activerecord.models.invited_by
+        invited_by_type: Zaproszeni według typu
+        remember_created_at: Pamiętaj, że utworzono o godz
+        reset_password_sent_at: Zresetuj hasło wysłane o godz
+        reset_password_token: Zresetuj token hasła
+        role: Rola
     errors:
       messages:
         record_invalid: 'Znaleziono błędy: %{errors}'
         restrict_dependent_destroy:
           has_many: Nie można usunąć, gdyż istnieją zależne od niego %{record}
           has_one: Nie można usunąć, gdyż istnieje zależny od niego %{record}
+    models:
+      document: Dokument CMR
+      user: Użytkownik
   date:
     abbr_day_names:
     - nie
@@ -142,6 +212,10 @@ pl:
       timeout: Sesja wygasła, aby kontynuować zaloguj się ponownie.
       unauthenticated: Aby kontynuować zaloguj lub zarejestruj się.
       unconfirmed: Aby kontynuować aktywuj konto.
+    invitations:
+      edit:
+        header: Header
+        submit_button: Submit button
     mailer:
       confirmation_instructions:
         action: Potwierdź swoje konto
@@ -153,6 +227,12 @@ pl:
         message: Kontaktujemy się z Tobą, aby Cię poinformować o zmianie Twojego adresu e-mail na %{email}.
         message_unconfirmed: Kontaktujemy się, by poinformować, że Twój adres e-mail został zmieniony na %{email}.
         subject: E-mail zmieniony
+      invitation_instructions:
+        accept: Accept
+        accept_until: Accept until
+        hello: Hello
+        ignore: Ignore
+        someone_invited_you: Someone invited you
       password_change:
         greeting: Witaj %{recipient}!
         message: Kontaktujemy się z Tobą w celu poinformowania, że Twoje hasło zostało zmienione.
@@ -254,6 +334,7 @@ pl:
       less_than_or_equal_to: musi być mniejsze lub równe %{count}
       not_a_number: nie jest liczbą
       not_an_integer: musi być liczbą całkowitą
+      not_saved: nie zapisano
       odd: musi być nieparzyste
       other_than: musi być inne niż %{count}
       present: musi być puste

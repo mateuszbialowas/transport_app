@@ -139,9 +139,6 @@ GEM
       rails-i18n
       rainbow (>= 2.2.2, < 4.0)
       terminal-table (>= 1.5.1)
-    i18n_generators (2.2.2)
-      activerecord (>= 3.0.0)
-      railties (>= 3.0.0)
     io-console (0.7.2)
     irb (1.11.2)
       rdoc
@@ -264,8 +261,6 @@ GEM
     regexp_parser (2.9.0)
     reline (0.4.3)
       io-console (~> 0.5)
-    requestjs-rails (0.0.11)
-      railties (>= 6.1.0)
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
@@ -362,7 +357,6 @@ DEPENDENCIES
   devise (~> 4.9)
   devise_invitable (~> 2.0)
   i18n-tasks
-  i18n_generators
   jbuilder
   jsbundling-rails
   letter_opener
@@ -372,7 +366,6 @@ DEPENDENCIES
   rails (~> 7.1.3, >= 7.1.3.2)
   rails-i18n
   redis (>= 4.0.1)
-  requestjs-rails
   rubocop-performance
   rubocop-rails
   selenium-webdriver

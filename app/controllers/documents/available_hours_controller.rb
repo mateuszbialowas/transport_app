@@ -10,7 +10,7 @@ module Documents
 
       collection = hours.reject do |hour|
         Document.exists?(taking_over_date:,
-                         taking_over_time: Time.zone.parse(hour))
+                         taking_over_start_time: Time.zone.parse(hour))
       end
 
       render 'documents/available_hours/index', locals: { collection: }

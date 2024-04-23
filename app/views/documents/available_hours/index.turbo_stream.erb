@@ -1,6 +1,6 @@
 <%= simple_form_for(Document.new) do |f| %>
-  <%= turbo_stream.replace "taking_over_time_wrapper" do %>
-    <%= f.input :taking_over_time, collection:, wrapper_html: { id: "taking_over_time_wrapper" } %>
+  <%= turbo_stream.replace "taking_over_start_time_wrapper" do %>
+    <%= f.input :taking_over_start_time, collection:, wrapper_html: { id: "taking_over_start_time_wrapper" } %>
   <% end %>
 <% end %>
 

@@ -8,15 +8,9 @@
     <%= f.input :delivery_place %>
     <%= f.input :taking_over_place %>
 
-    <% if @document.errors.include?(:taking_over_at) %>
-      <% @document.errors.full_messages_for(:taking_over_at).each do |message| %>
-        <p class="field_with_errors"><%= message %></p>
-      <% end %>
-    <% end %>
-
     <div data-controller="available-hours">
       <%= f.input :taking_over_date, as: :string, input_html: { type: 'date', data: { available_hours_target: 'dateInput' } } %>
-      <%= f.input :taking_over_time, collection: [], disabled: !@document.persisted?, wrapper_html: { id: "taking_over_time_wrapper" } %>
+      <%= f.input :taking_over_start_time, collection: [], disabled: !@document.persisted?, wrapper_html: { id: "taking_over_start_time_wrapper" } %>
     </div>
 
     <%= f.input :documents %>

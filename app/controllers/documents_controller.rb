@@ -71,13 +71,6 @@ class DocumentsController < AuthenticatedController
                                      :carriage_instructions_14, :carriage_paid_14, :carriage_forward_14,
                                      :cash_on_delivery_15, :carrier_16, :carriers_plates_16, :successive_carriers_17,
                                      :carriers_reservations_18, :special_agreements_19, :established_in_21,
-                                     :established_in_date_21, :taking_over_date, :taking_over_time)
-  end
-
-  def parse_taking_over_at
-    return if document_params.dig(:taking_over_at,
-                                  :date).blank? || document_params.dig(:taking_over_at, :time).blank?
-
-    DateTime.parse("#{document_params[:taking_over_at][:date]} #{document_params[:taking_over_at][:time]}")
+                                     :established_in_date_21, :taking_over_date, :taking_over_start_time)
   end
 end

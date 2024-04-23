@@ -10,7 +10,8 @@ class CreateDocuments < ActiveRecord::Migration[7.1]
 
       t.string :taking_over_place
       t.date :taking_over_date
-      t.time :taking_over_time
+      t.time :taking_over_start_time
+      t.time :taking_over_end_time
 
       t.text :documents
 

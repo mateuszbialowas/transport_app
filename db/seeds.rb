@@ -1,8 +1,14 @@
-User.create(email: 'admin@example.com', password: 'password', password_confirmation: 'password', role: User::ADMIN)
+User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password', role: User::ADMIN)
 
-Document.create!(taking_over_at: "18/04/2024 10:00:00", cmr_number: "1234")
-Document.create!(taking_over_at: "18/04/2024 10:30", cmr_number: "1235")
-Document.create!(taking_over_at: "18/04/2024 11:00", cmr_number: "1236")
-Document.create!(taking_over_at: "18/04/2024 11:30", cmr_number: "1237")
-Document.create!(taking_over_at: "18/04/2024 13:30", cmr_number: "1238")
-Document.create!(taking_over_at: "18/04/2024 15:30", cmr_number: "1239")
+sender = "Mariusz Kowalski\nul. Kwiatowa 1\n00-001 Warszawa Poland"
+consignee = "Jan Kowalski\nul. Kwiatowa 1\n00-001 Warszawa Poland"
+taking_over_place = "ul. Kwiatowa 1\n00-001 Warszawa Poland"
+
+
+Document.create!(sender:,
+                 consignee:,
+                 taking_over_place:,
+                 taking_over_date: Date.current,
+                 taking_over_start_time: "10:00",
+                 taking_over_end_time: "10:30",
+                 cmr_number: "1234")

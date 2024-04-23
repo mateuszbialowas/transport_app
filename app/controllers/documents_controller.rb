@@ -39,9 +39,10 @@ class DocumentsController < AuthenticatedController
 
   def update
     if @document.update(document_params)
-      redirect_to document_url(document), notice: 'Document was successfully updated.'
+      redirect_to document_url(@document), notice: 'Document was successfully updated.'
     else
-      render :edit, status: :unprocessable_entity, locals: { document: }
+      available_hours = ::AvailableHours.new(@document.taking_over_date, document: @document).call
+      render :edit, status: :unprocessable_entity, locals: { document: @document, available_hours:}
     end
   end
 

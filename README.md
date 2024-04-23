@@ -1,13 +1,7 @@
 # README
 
 ## I18n
+rails g i18n_translation pl
 
-
-## Timezones tips
-* Time.current
-* 2.hours.ago
-* Time.zone.today
-* Date.current
-* 1.day.from_now
-* Time.zone.parse("2015-07-04 17:05:37")
-* Time.strptime(string, "%Y-%m-%dT%H:%M:%S%z").in_time_zone
+## Timezones
+We decided do not use timezones at all at this moment. We are using UTC time.

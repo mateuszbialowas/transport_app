@@ -548,16 +548,16 @@ export default class extends Controller {
         doc.setTextColor(1, 1, 1);
 
 
-        doc.text(21, 35,     document.getElementById("document_sender_1").value);
+        doc.text(21, 35,     document.getElementById("document_sender").value);
         doc.text(166, 33,    document.getElementById("document_cmr_number").value);
-        doc.text(21, 59,     document.getElementById("document_consignee_2").value);
+        doc.text(21, 59,     document.getElementById("document_consignee").value);
         doc.text(112, 59,    document.getElementById("document_carrier_16").value);
         doc.text(130, 71.5,  document.getElementById("document_carriers_plates_16").value);
-        doc.text(21, 83,     document.getElementById("document_delivery_place_3").value);
+        doc.text(21, 83,     document.getElementById("document_delivery_place").value);
         doc.text(112, 83,    document.getElementById("document_successive_carriers_17").value);
-        doc.text(21, 107,    document.getElementById("document_taking_over_place_4").value);
-        doc.text(70, 107,    document.getElementById("document_taking_over_date_4").value);
-        doc.text(21, 122,    document.getElementById("document_documents_5").value);
+        doc.text(21, 107,    document.getElementById("document_taking_over_place").value);
+        doc.text(70, 107,    document.getElementById("document_taking_over_date").value);
+        doc.text(21, 122,    document.getElementById("document_documents").value);
         doc.text(21, 139,    document.getElementById("document_marks_6_1").value);
         doc.text(50, 139,    document.getElementById("document_number_7_1").value);
         doc.text(79, 139,    document.getElementById("document_method_8_1").value);

@@ -16,9 +16,9 @@ pl:
         cash_on_delivery_15: Zapłata
         class_6: Klasa
         cmr_number: Numer CMR  #g
-        consignee_2: Odbiorca
-        delivery_place_3: Miejsce przeznaczenia
-        documents_5: Dokumenty
+        consignee: Odbiorca
+        delivery_place: Miejsce przeznaczenia
+        documents: Dokumenty
         established_in_21: Wystawiono w
         established_in_date_21: Wystawiono dnia
         letter_8: Litera
@@ -43,12 +43,12 @@ pl:
         number_7_2: Ilośc sztuk
         number_7_3: Ilośc sztuk
         number_7_4: Ilośc sztuk
-        sender_1: Nadawca
+        sender: Nadawca
         sender_instructions_13: Instrukcje nadawcy
         special_agreements_19: Postanowienia specjalne
         successive_carriers_17: Kolejni przewoźnicy
         taking_over_at_4: Data załadowania
-        taking_over_place_4: Miejsce załadowania
+        taking_over_place: Miejsce załadowania
         volume_12_1: Objętość w m3
         volume_12_2: Objętość w m3
         volume_12_3: Objętość w m3

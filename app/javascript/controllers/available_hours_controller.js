@@ -15,7 +15,7 @@ export default class extends Controller {
     console.log("Fetching available hours")
     await get("/documents/available_hours", {
       responseKind: "turbo-stream",
-      query: { taking_over_date_4: this.dateInputTarget.value }
+      query: { taking_over_date: this.dateInputTarget.value }
     })
   }
 }

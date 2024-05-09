@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class UsersController < ApplicationController
+class UsersController < AuthenticatedController
   def index
-    users = User.all
+    users = policy_scope(User)
 
     render 'users/index', locals: { users: }
   end

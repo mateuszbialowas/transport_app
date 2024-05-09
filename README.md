@@ -12,3 +12,7 @@ i18n-tasks normalize
 
 ## Timezones
 We decided do not use timezones at all at this moment. We are using UTC time.
+
+
+## Pundit
+rails g pundit:policy post

@@ -16,6 +16,7 @@ export default class extends Controller {
         right: 'timeGridWeek,timeGridDay'
       },
       events: '/calendar/events.json',
+      height: 'auto',
       initialView: 'timeGridWeek',
       locale: plLocale,
       firstDay: 1,

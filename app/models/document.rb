@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Document < ApplicationRecord
+  belongs_to :client, class_name: 'User', foreign_key: 'user_id', inverse_of: :documents
+
   validates :cmr_number, :taking_over_date, :taking_over_start_time, :taking_over_end_time, presence: true
   validate :not_overlapping
 
@@ -19,7 +21,7 @@ class Document < ApplicationRecord
                .where(taking_over_date:)
                .where('taking_over_start_time < ? AND taking_over_end_time > ?', taking_over_end_time, taking_over_start_time).present?
       errors.add(:base, 'Overlapping document')
-      errors.add(:taking_over_start_time, "Overlapping document")
+      errors.add(:taking_over_start_time, 'Overlapping document')
     end
   end
 end

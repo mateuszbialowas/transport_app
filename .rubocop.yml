@@ -44,3 +44,7 @@ Naming/VariableNumber:
 
 Rails/I18nLocaleTexts:
   Enabled: false
+
+
+Rails/NotNullColumn:
+  Enabled: false

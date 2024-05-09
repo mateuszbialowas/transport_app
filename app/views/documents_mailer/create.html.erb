@@ -1,0 +1,7 @@
+<h1>Potwierdzenie załadunku</h1>
+
+<ul>
+  <li>Numer CMR: <%= @document.cmr_number %></li>
+  <li>Data: <%= l @document.taking_over_date %></li>
+  <li>Godzina: <%= l @document.taking_over_start_time, format: :hour_and_minute %></li>
+</ul>

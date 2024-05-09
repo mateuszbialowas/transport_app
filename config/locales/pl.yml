@@ -44,10 +44,10 @@ pl:
         sender_instructions_13: Instrukcje nadawcy
         special_agreements_19: Postanowienia specjalne
         successive_carriers_17: Kolejni przewoźnicy
-        taking_over_date: Data załadowania
-        taking_over_end_time: Godzina końcowa załadowania
+        taking_over_date: Data załadunku
+        taking_over_end_time: Godzina końcowa załadunku
         taking_over_place: Miejsce załadowania
-        taking_over_start_time: Godzina początkowa załadowania
+        taking_over_start_time: Godzina początkowa załadunku
         volume_12_1: Objętość w m3
         volume_12_2: Objętość w m3
         volume_12_3: Objętość w m3
@@ -315,6 +315,12 @@ pl:
       send_instructions: Wkrótce powinieneś otrzymać e-mail z instrukcjami jak odblokować swoje konto.
       send_paranoid_instructions: Jeśli Twoje konto istnieje w naszej bazie, otrzymasz zaraz e-mail z instrukcjami jak odblokować swoje konto.
       unlocked: Twoje konto zostało odblokowane. Zaloguj się, aby kontynuować.
+  documents_mailer:
+    create:
+      subject: 'Potwiwerdzenie daty i godziny załadunku'
+  documents:
+    form:
+      submit: Zapisz i wyślij potwierdzenie daty i godziny załadunku
   errors:
     already_confirmed: już został aktywowany, możesz się zalogować
     confirmation_period_expired: musi być potwierdzone w ciągu %{period}, zamów nową wiadomość aktywacyjną
@@ -447,4 +453,5 @@ pl:
       default: "%a, %-d %b %Y %H:%M:%S %z"
       long: "%-d %B %Y %H:%M"
       short: "%-d %b %H:%M"
+      hour_and_minute: "%H:%M"
     pm: po południu

@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   enum role: { admin: ADMIN, client: CLIENT }
 
+  has_many :documents, dependent: :destroy
+
   # Validations
   validates :role, presence: true, inclusion: { in: ROLES }
 end

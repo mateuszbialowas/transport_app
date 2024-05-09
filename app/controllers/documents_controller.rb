@@ -22,15 +22,19 @@ class DocumentsController < AuthenticatedController
   end
 
   def create
-    parsed_end_time = Time.zone.parse(document_params[:taking_over_start_time]) if document_params[:taking_over_start_time].present?
+    if document_params[:taking_over_start_time].present?
+      parsed_end_time = Time.zone.parse(document_params[:taking_over_start_time])
+    end
     parsed_end_time = parsed_end_time.present? ? parsed_end_time + 30.minutes : nil
 
     document = Document.new(document_params.merge(
                               cmr_number: Random.rand(1000..9999),
-                              taking_over_end_time: parsed_end_time
+                              taking_over_end_time: parsed_end_time,
+                              client: current_user
                             ))
 
     if document.save
+      DocumentsMailer.create(document).deliver_later
       redirect_to document_url(document), notice: 'Document was successfully created.'
     else
       available_hours = ::AvailableHours.new(document.taking_over_date, document: @document).call
@@ -44,7 +48,7 @@ class DocumentsController < AuthenticatedController
       redirect_to document_url(@document), notice: 'Document was successfully updated.'
     else
       available_hours = ::AvailableHours.new(@document.taking_over_date, document: @document).call
-      render :edit, status: :unprocessable_entity, locals: { document: @document, available_hours:}
+      render :edit, status: :unprocessable_entity, locals: { document: @document, available_hours: }
     end
   end
 

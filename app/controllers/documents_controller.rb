@@ -22,7 +22,7 @@ class DocumentsController < AuthenticatedController
   end
 
   def create
-    parsed_end_time = Time.zone.parse(document_params[:taking_over_start_time])
+    parsed_end_time = Time.zone.parse(document_params[:taking_over_start_time]) if document_params[:taking_over_start_time].present?
     parsed_end_time = parsed_end_time.present? ? parsed_end_time + 30.minutes : nil
 
     document = Document.new(document_params.merge(
@@ -33,7 +33,9 @@ class DocumentsController < AuthenticatedController
     if document.save
       redirect_to document_url(document), notice: 'Document was successfully created.'
     else
-      render :new, status: :unprocessable_entity, locals: { document: }
+      available_hours = ::AvailableHours.new(document.taking_over_date, document: @document).call
+
+      render :new, status: :unprocessable_entity, locals: { document:, available_hours: }
     end
   end
 

@@ -44,7 +44,10 @@ pl:
         sender_instructions_13: Instrukcje nadawcy
         special_agreements_19: Postanowienia specjalne
         successive_carriers_17: Kolejni przewoźnicy
+        taking_over_date: Data załadowania
+        taking_over_end_time: Godzina końcowa załadowania
         taking_over_place: Miejsce załadowania
+        taking_over_start_time: Godzina początkowa załadowania
         volume_12_1: Objętość w m3
         volume_12_2: Objętość w m3
         volume_12_3: Objętość w m3

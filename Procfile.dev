@@ -1,4 +1,0 @@
-web: env RUBY_DEBUG_OPEN=true bin/rails server
-js: yarn build --watch
-css: yarn watch:css
-database: /opt/homebrew/opt/postgresql@14/bin/postgres -D /opt/homebrew/var/postgresql@14

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 User.find_or_create_by!(email: 'admin@example.com', role: User::ADMIN) do |user|
-  user.password = 'password123!1'
-  user.password_confirmation = 'password123!1'
+  user.password = 'password'
+  user.password_confirmation = 'password'
 end
 
 client = User.find_or_create_by!(email: 'client@example.com', role: User::CLIENT) do |user|

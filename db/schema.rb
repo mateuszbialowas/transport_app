@@ -56,6 +56,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_09_210941) do
     t.string "number_7"
     t.string "letter_8"
     t.string "adr_9"
+    t.text "products"
     t.text "sender_instructions_13"
     t.string "carriage_instructions_14"
     t.string "carriage_paid_14"

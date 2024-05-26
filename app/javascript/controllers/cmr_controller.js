@@ -219,56 +219,56 @@ export default class extends Controller {
         // 6.
         doc.setFontSize(13);
         doc.setFont(undefined, "bold")
-        doc.text(17, 133, '6');
+        doc.text(17, 133, '6 - 9');
         doc.setFontSize(5);
         doc.setFont(undefined, "normal")
-        doc.text(21, 130, 'Cechy i numery');
-        doc.text(21, 131.8, 'Kennzeichen und Nammern');
-        doc.text(21, 133.6, 'Marks and Nos');
+        doc.text(28, 130, 'Produkty');
+        doc.text(28, 131.8, 'Produkte');
+        doc.text(28, 133.6, 'Products');
 
-        doc.text(17, 182, 'Klasa');
-        doc.text(17, 183.8, 'Klasse');
-        doc.text(17, 185.6, 'Class');
+        // doc.text(17, 182, 'Klasa');
+        // doc.text(17, 183.8, 'Klasse');
+        // doc.text(17, 185.6, 'Class');
 
         // 7.
-        doc.setFontSize(13);
-        doc.setFont(undefined, "bold")
-        doc.text(46, 133, '7');
-        doc.setFontSize(5);
-        doc.setFont(undefined, "normal")
-        doc.text(50, 130, 'Ilosc sztuk');
-        doc.text(50, 131.8, 'Anzahl der Packstucke');
-        doc.text(50, 133.6, 'Number of packages');
-
-        doc.text(46, 182, 'Liczba');
-        doc.text(46, 183.8, 'Ziffer');
-        doc.text(46, 185.6, 'Number');
+        // doc.setFontSize(13);
+        // doc.setFont(undefined, "bold")
+        // doc.text(46, 133, '7');
+        // doc.setFontSize(5);
+        // doc.setFont(undefined, "normal")
+        // doc.text(50, 130, 'Ilosc sztuk');
+        // doc.text(50, 131.8, 'Anzahl der Packstucke');
+        // doc.text(50, 133.6, 'Number of packages');
+        //
+        // doc.text(46, 182, 'Liczba');
+        // doc.text(46, 183.8, 'Ziffer');
+        // doc.text(46, 185.6, 'Number');
 
         // 8.
-        doc.setFontSize(13);
-        doc.setFont(undefined, "bold")
-        doc.text(75, 133, '8');
-        doc.setFontSize(5);
-        doc.setFont(undefined, "normal")
-        doc.text(79, 130, 'Sposob opakowania');
-        doc.text(79, 131.8, 'Art der Verpackung');
-        doc.text(79, 133.6, 'Method of packing');
-
-        doc.text(75, 182, 'Litera');
-        doc.text(75, 183.8, 'Buchstabe');
-        doc.text(75, 185.6, 'Letter');
+        // doc.setFontSize(13);
+        // doc.setFont(undefined, "bold")
+        // doc.text(75, 133, '8');
+        // doc.setFontSize(5);
+        // doc.setFont(undefined, "normal")
+        // doc.text(79, 130, 'Sposob opakowania');
+        // doc.text(79, 131.8, 'Art der Verpackung');
+        // doc.text(79, 133.6, 'Method of packing');
+        //
+        // doc.text(75, 182, 'Litera');
+        // doc.text(75, 183.8, 'Buchstabe');
+        // doc.text(75, 185.6, 'Letter');
 
         // 9.
-        doc.setFontSize(13);
-        doc.setFont(undefined, "bold")
-        doc.text(101, 133, '9');
-        doc.setFontSize(5);
-        doc.setFont(undefined, "normal")
-        doc.text(105, 130, 'Rodzaj towaru');
-        doc.text(105, 131.8, 'Bezeichnung des Gutes');
-        doc.text(105, 133.6, 'Nature of the goods');
-
-        doc.text(101, 182, '(ADR*)');
+        // doc.setFontSize(13);
+        // doc.setFont(undefined, "bold")
+        // doc.text(101, 133, '9');
+        // doc.setFontSize(5);
+        // doc.setFont(undefined, "normal")
+        // doc.text(105, 130, 'Rodzaj towaru');
+        // doc.text(105, 131.8, 'Bezeichnung des Gutes');
+        // doc.text(105, 133.6, 'Nature of the goods');
+        //
+        // doc.text(101, 182, '(ADR*)');
 
         // 10. NR STATYSTYCZNY
         doc.rect(127, 127, 23, 53);
@@ -558,34 +558,42 @@ export default class extends Controller {
         doc.text(21, 107,    document.getElementById("document_taking_over_place").value);
         doc.text(70, 107,    document.getElementById("document_taking_over_date").value);
         doc.text(21, 122,    document.getElementById("document_documents").value);
-        doc.text(21, 139,    document.getElementById("document_marks_6_1").value);
-        doc.text(50, 139,    document.getElementById("document_number_7_1").value);
-        doc.text(79, 139,    document.getElementById("document_method_8_1").value);
-        doc.text(105, 139,   document.getElementById("document_nature_9_1").value);
-        doc.text(134, 139,   document.getElementById("document_number_10_1").value);
-        doc.text(157, 139,   document.getElementById("document_weight_11_1").value);
-        doc.text(180, 139,   document.getElementById("document_volume_12_1").value);
-        doc.text(21, 146,    document.getElementById("document_marks_6_2").value);
-        doc.text(50, 146,    document.getElementById("document_number_7_2").value);
-        doc.text(79, 146,    document.getElementById("document_method_8_2").value);
-        doc.text(105, 146,   document.getElementById("document_nature_9_2").value);
-        doc.text(134, 146,   document.getElementById("document_number_10_2").value);
-        doc.text(157, 146,   document.getElementById("document_weight_11_2").value);
-        doc.text(180, 146,   document.getElementById("document_volume_12_2").value);
-        doc.text(21, 153,    document.getElementById("document_marks_6_3").value);
-        doc.text(50, 153,    document.getElementById("document_number_7_3").value);
-        doc.text(79, 153,    document.getElementById("document_method_8_3").value);
-        doc.text(105, 153,   document.getElementById("document_nature_9_3").value);
-        doc.text(134, 153,   document.getElementById("document_number_10_3").value);
-        doc.text(157, 153,   document.getElementById("document_weight_11_3").value);
-        doc.text(180, 153,   document.getElementById("document_volume_12_3").value);
-        doc.text(21, 160,    document.getElementById("document_marks_6_4").value);
-        doc.text(50, 160,    document.getElementById("document_number_7_4").value);
-        doc.text(79, 160,    document.getElementById("document_method_8_4").value);
-        doc.text(105, 160,   document.getElementById("document_nature_9_4").value);
-        doc.text(134, 160,   document.getElementById("document_number_10_4").value);
-        doc.text(157, 160,   document.getElementById("document_weight_11_4").value);
-        doc.text(180, 160,   document.getElementById("document_volume_12_4").value);
+
+
+        doc.text(21, 139,    document.getElementById("document_products").value);
+
+        // doc.text(21, 139,    document.getElementById("document_marks_6_1").value);
+        // doc.text(50, 139,    document.getElementById("document_number_7_1").value);
+        // doc.text(79, 139,    document.getElementById("document_method_8_1").value);
+        // doc.text(105, 139,   document.getElementById("document_nature_9_1").value);
+        // doc.text(134, 139,   document.getElementById("document_number_10_1").value);
+        // doc.text(157, 139,   document.getElementById("document_weight_11_1").value);
+        // doc.text(180, 139,   document.getElementById("document_volume_12_1").value);
+
+        // doc.text(21, 146,    document.getElementById("document_marks_6_2").value);
+        // doc.text(50, 146,    document.getElementById("document_number_7_2").value);
+        // doc.text(79, 146,    document.getElementById("document_method_8_2").value);
+        // doc.text(105, 146,   document.getElementById("document_nature_9_2").value);
+        // doc.text(134, 146,   document.getElementById("document_number_10_2").value);
+        // doc.text(157, 146,   document.getElementById("document_weight_11_2").value);
+        // doc.text(180, 146,   document.getElementById("document_volume_12_2").value);
+
+        // doc.text(21, 153,    document.getElementById("document_marks_6_3").value);
+        // doc.text(50, 153,    document.getElementById("document_number_7_3").value);
+        // doc.text(79, 153,    document.getElementById("document_method_8_3").value);
+        // doc.text(105, 153,   document.getElementById("document_nature_9_3").value);
+        // doc.text(134, 153,   document.getElementById("document_number_10_3").value);
+        // doc.text(157, 153,   document.getElementById("document_weight_11_3").value);
+        // doc.text(180, 153,   document.getElementById("document_volume_12_3").value);
+
+        // doc.text(21, 160,    document.getElementById("document_marks_6_4").value);
+        // doc.text(50, 160,    document.getElementById("document_number_7_4").value);
+        // doc.text(79, 160,    document.getElementById("document_method_8_4").value);
+        // // doc.text(105, 160,   document.getElementById("document_nature_9_4").value);
+        // doc.text(134, 160,   document.getElementById("document_number_10_4").value);
+        // doc.text(157, 160,   document.getElementById("document_weight_11_4").value);
+        // doc.text(180, 160,   document.getElementById("document_volume_12_4").value);
+
         doc.text(25, 184.5,  document.getElementById("document_class_6").value);
         doc.text(54, 184.5,  document.getElementById("document_number_7").value);
         doc.text(85, 184.5,  document.getElementById("document_letter_8").value);

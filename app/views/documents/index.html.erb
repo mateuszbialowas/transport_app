@@ -29,7 +29,7 @@
       <td><%= l(document.taking_over_start_at, format: :short) %></td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
+      <td><%= simple_format document.products %>
       <td><%= link_to "Zobacz", document %></td>
     </tr>
   <% end %>

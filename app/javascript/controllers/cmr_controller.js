@@ -594,10 +594,10 @@ export default class extends Controller {
         // doc.text(157, 160,   document.getElementById("document_weight_11_4").value);
         // doc.text(180, 160,   document.getElementById("document_volume_12_4").value);
 
-        doc.text(25, 184.5,  document.getElementById("document_class_6").value);
-        doc.text(54, 184.5,  document.getElementById("document_number_7").value);
-        doc.text(85, 184.5,  document.getElementById("document_letter_8").value);
-        doc.text(109, 184.5, document.getElementById("document_adr_9").value);
+        // doc.text(25, 184.5,  document.getElementById("document_class_6").value);
+        // doc.text(54, 184.5,  document.getElementById("document_number_7").value);
+        // doc.text(85, 184.5,  document.getElementById("document_letter_8").value);
+        // doc.text(109, 184.5, document.getElementById("document_adr_9").value);
         doc.text(21, 197,    document.getElementById("document_sender_instructions_13").value);
         doc.text(110, 197,   document.getElementById("document_special_agreements_19").value);
         doc.text(57, 234,    document.getElementById("document_carriage_instructions_14").value);

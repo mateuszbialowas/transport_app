@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: '/emails' if Rails.env.development?
 
   devise_for :users, controllers: { invitations: 'users/invitations' }
-  root 'static_pages#home'
+  root to: 'documents#index'
   resources :documents do
     collection do
       resources :available_hours, only: [:index], module: :documents

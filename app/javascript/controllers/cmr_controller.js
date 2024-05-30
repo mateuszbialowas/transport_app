@@ -556,7 +556,7 @@ export default class extends Controller {
         doc.text(21, 83,     document.getElementById("document_delivery_place").value);
         doc.text(112, 83,    document.getElementById("document_successive_carriers_17").value);
         doc.text(21, 107,    document.getElementById("document_taking_over_place").value);
-        doc.text(70, 107,    document.getElementById("document_taking_over_date").value);
+        doc.text(85, 107,    document.getElementById("document_taking_over_date").value);
         doc.text(21, 122,    document.getElementById("document_documents").value);
 
 
@@ -606,6 +606,7 @@ export default class extends Controller {
         doc.text(38, 248,    document.getElementById("document_established_in_21").value);
         doc.text(76, 248,    document.getElementById("document_established_in_date_21").value);
         doc.text(129, 248,   document.getElementById("document_cash_on_delivery_15").value);
+        doc.text(21, 254,    document.getElementById("document_sender_signature_22").innerText);
     }
 }
 

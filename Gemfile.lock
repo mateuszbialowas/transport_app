@@ -120,12 +120,16 @@ GEM
     devise_invitable (2.0.9)
       actionmailer (>= 5.0)
       devise (>= 4.6)
+    domain_name (0.6.20240107)
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     highline (3.0.1)
+    http-accept (1.7.0)
+    http-cookie (1.0.6)
+      domain_name (~> 0.5)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     i18n-tasks (1.0.13)
@@ -168,9 +172,14 @@ GEM
       net-imap
       net-pop
       net-smtp
+    mailgun-ruby (1.2.14)
+      rest-client (>= 2.0.2)
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
+    mime-types (3.5.2)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2024.0507)
     mini_mime (1.1.5)
     minitest (5.22.2)
     msgpack (1.7.2)
@@ -184,6 +193,7 @@ GEM
       timeout
     net-smtp (0.4.0.1)
       net-protocol
+    netrc (0.11.0)
     nio4r (2.7.0)
     nokogiri (1.16.2-aarch64-linux)
       racc (~> 1.4)
@@ -266,6 +276,11 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rexml (3.2.6)
     rubocop (1.61.0)
       json (~> 2.3)
@@ -363,6 +378,7 @@ DEPENDENCIES
   jsbundling-rails
   letter_opener
   letter_opener_web
+  mailgun-ruby
   pg (~> 1.1)
   puma (>= 5.0)
   pundit

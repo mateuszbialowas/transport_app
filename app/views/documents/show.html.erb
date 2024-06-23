@@ -5,6 +5,11 @@
     Edytuj <i class="fa-solid fa-pen-to-square"></i>
   <% end %>
 
-  <%= button_to "Usuń", document, method: :delete, class: "btn btn-danger" %>
+  <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+
+    Usuń <i class="fa-solid fa-trash"></i>
+
+  </button>
+  <%= render Modal.new(document:) %>
   <%= render DownloadCmr.new(document: ) %>
 </div>

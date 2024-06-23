@@ -73,8 +73,7 @@
 
     <%= f.input :established_in_21 %>
     <%= f.input :established_in_date_21 %>
-    <%= f.input :sender_signature, collection: sender_signature_collection,
-                selected: f.object.sender_signature.presence || sender_signature_collection.first %>
+    <%= f.input :sender_signature, collection: sender_signature_collection %>
   </div>
 
   <div class="form-actions">

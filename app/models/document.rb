@@ -18,11 +18,12 @@ class Document < ApplicationRecord
   private
 
   def not_overlapping
-    if Document.where.not(id:)
-               .where(taking_over_date:)
-               .where('taking_over_start_time < ? AND taking_over_end_time > ?', taking_over_end_time, taking_over_start_time).present?
-      errors.add(:base, 'Overlapping document')
-      errors.add(:taking_over_start_time, 'Overlapping document')
-    end
+    documents = Document.where.not(id:)
+                        .where(taking_over_date:)
+                        .where('taking_over_start_time < ? AND taking_over_end_time > ?', taking_over_end_time, taking_over_start_time)
+    return if documents.blank?
+
+    errors.add(:base, "Czas odbioru nakłada się na inny dokument: #{documents.map(&:cmr_number)}")
+    errors.add(:taking_over_start_time, "Czas odbioru nakłada się na inny dokument: #{documents.map(&:cmr_number)}")
   end
 end

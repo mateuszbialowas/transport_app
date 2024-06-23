@@ -10,10 +10,10 @@
 
     <div data-controller="available-hours">
       <%= f.input :taking_over_date, input_html: { data: { action: "change->available-hours#update" } } %>
-        <%= f.input :taking_over_start_time, collection: available_hours,
-                  selected: f.object.taking_over_start_time.try(:strftime, '%H:%M').to_s,
-                  disabled: !document.persisted? && f.object.taking_over_date.blank?,
-                  wrapper_html: { id: "taking_over_start_time_wrapper" } %>
+      <%= f.input :taking_over_start_time, collection: available_hours,
+                selected: f.object.taking_over_start_time.try(:strftime, '%H:%M').to_s,
+                disabled: !document.persisted? && f.object.taking_over_date.blank?,
+                wrapper_html: { id: "taking_over_start_time_wrapper" } %>
     </div>
 
     <%= f.input :documents %>

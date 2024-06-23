@@ -4,7 +4,7 @@ class DocumentsController < AuthenticatedController
   before_action :set_document, only: %i[show edit update destroy]
 
   def index
-    render 'documents/index', locals: { documents: Document.all }
+    render 'documents/index', locals: { documents: Document.order(created_at: :desc) }
   end
 
   def show

@@ -9,7 +9,7 @@ export default class extends Controller {
 
     static values = {
         sender: String,
-        cmrNumber: String,
+        number: String,
         consignee: String,
         carrier: String,
         carriersPlates: String,
@@ -570,7 +570,7 @@ export default class extends Controller {
 
 
         doc.text(21, 35,     this.senderValue);
-        doc.text(166, 33,    this.cmrNumberValue);
+        doc.text(166, 33,    this.numberValue);
         doc.text(21, 59,     this.consigneeValue);
         doc.text(112, 59,    this.carrierValue);
         doc.text(130, 71.5,  this.carriersPlatesValue);

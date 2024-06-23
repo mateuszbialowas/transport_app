@@ -28,7 +28,7 @@ class DocumentsController < AuthenticatedController
     parsed_end_time = parsed_end_time.present? ? parsed_end_time + 30.minutes : nil
 
     document = Document.new(document_params.merge(
-                              cmr_number: Random.rand(1000..9999),
+                              cmr_number: generate_cmr_number,
                               taking_over_end_time: parsed_end_time,
                               client: current_user
                             ))
@@ -64,6 +64,11 @@ class DocumentsController < AuthenticatedController
     @document = Document.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     redirect_to documents_url, alert: 'Document not found.'
+  end
+
+  def generate_cmr_number
+    number = Document.where(created_at: Time.zone.now.beginning_of_day..).count + 1
+    I18n.l Date.current, format: :cmr, number: number.to_s.rjust(4, '0')
   end
 
   def document_params # rubocop:disable Metrics/MethodLength

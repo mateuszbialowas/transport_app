@@ -112,6 +112,7 @@ pl:
     - piątek
     - sobota
     formats:
+      cmr: "%d%m%Y%{number}"
       default: "%d-%m-%Y"
       long: "%-d %B %Y"
       short: "%-d %b"

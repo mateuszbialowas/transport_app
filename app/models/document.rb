@@ -4,6 +4,7 @@ class Document < ApplicationRecord
   belongs_to :client, class_name: 'User', foreign_key: 'user_id', inverse_of: :documents
 
   validates :cmr_number, :taking_over_date, :taking_over_start_time, :taking_over_end_time, presence: true
+  validates :cmr_number, uniqueness: true
   validate :not_overlapping
 
   def taking_over_start_at

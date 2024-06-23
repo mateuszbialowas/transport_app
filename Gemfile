@@ -7,7 +7,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'devise', '~> 4.9'
-gem 'devise_invitable', '~> 2.0'
+# gem 'devise_invitable', '~> 2.0' # disabled for now
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'mailgun-ruby'

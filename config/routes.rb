@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: '/emails' if Rails.env.development?
 
-  devise_for :users, controllers: { invitations: 'users/invitations' }
+  devise_for :users
   root to: 'documents#index'
   resources :documents do
     collection do
@@ -16,7 +16,6 @@ Rails.application.routes.draw do
       get :events
     end
   end
-  resources :users, only: [:index]
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

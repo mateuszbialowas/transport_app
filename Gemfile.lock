@@ -117,9 +117,6 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise_invitable (2.0.9)
-      actionmailer (>= 5.0)
-      devise (>= 4.6)
     domain_name (0.6.20240107)
     drb (2.2.0)
       ruby2_keywords
@@ -372,7 +369,6 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise (~> 4.9)
-  devise_invitable (~> 2.0)
   i18n-tasks
   jbuilder
   jsbundling-rails

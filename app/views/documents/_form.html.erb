@@ -9,10 +9,10 @@
     <%= f.input :taking_over_place, collection: taking_over_place_collection %>
 
     <div data-controller="available-hours">
-      <%= f.input :taking_over_date, as: :string, input_html: { type: 'date', data: { available_hours_target: 'dateInput' } } %>
+      <%= f.input :taking_over_date, input_html: { data: { action: "change->available-hours#update" } } %>
       <%= f.input :taking_over_start_time, collection: available_hours,
                   selected: f.object.taking_over_start_time.try(:strftime, '%H:%M'),
-                  disabled: !document.persisted?,
+                  disabled: !document.persisted? && f.object.taking_over_date.blank?,
                   wrapper_html: { id: "taking_over_start_time_wrapper" } %>
     </div>
 
@@ -49,10 +49,10 @@
     <%#= f.input :weight_11_4 %>
     <%#= f.input :volume_12_4 %>
 
-      <%#= f.input :class_6 %>
-      <%#= f.input :number_7 %>
-      <%#= f.input :letter_8 %>
-      <%#= f.input :adr_9 %>
+    <%#= f.input :class_6 %>
+    <%#= f.input :number_7 %>
+    <%#= f.input :letter_8 %>
+    <%#= f.input :adr_9 %>
 
     <div class="d-none">
       <%= f.input :sender_instructions_13 %>

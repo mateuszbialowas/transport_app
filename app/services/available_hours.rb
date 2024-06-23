@@ -7,7 +7,7 @@ class AvailableHours
   end
 
   def call
-    hours = (8..11).map do |hour|
+    hours = (8..16).map do |hour|
       ["#{hour}:00", "#{hour}:30"]
     end.flatten
 

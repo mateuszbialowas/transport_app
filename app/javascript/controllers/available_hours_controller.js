@@ -5,17 +5,18 @@ import { get } from '@rails/request.js'
 export default class extends Controller {
   static targets = [ "dateInput" ]
 
-  connect() {
-    this.dateInputTarget.addEventListener("change", () => {
-      this.fetch()
-    })
-  }
-
-  async fetch() {
+  async update() {
     console.log("Fetching available hours")
+
+    let day = document.getElementById('document_taking_over_date_3i').value;
+    let month = document.getElementById('document_taking_over_date_2i').value;
+    let year = document.getElementById('document_taking_over_date_1i').value;
+
+    let fullDate = new Date(year, month - 1, day);
+
     await get("/documents/available_hours", {
       responseKind: "turbo-stream",
-      query: { taking_over_date: this.dateInputTarget.value }
+      query: { taking_over_date: fullDate}
     })
   }
 }

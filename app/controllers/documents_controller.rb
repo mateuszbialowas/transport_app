@@ -44,7 +44,8 @@ class DocumentsController < AuthenticatedController
   end
 
   def update
-    if @document.update(document_params)
+    taking_over_end_time = Time.zone.parse(document_params[:taking_over_start_time]) + 30.minutes
+    if @document.update(document_params.merge(taking_over_end_time:))
       redirect_to document_url(@document), notice: 'CMR zaktualizowany.'
     else
       available_hours = ::AvailableHours.new(@document.taking_over_date, document: @document).call

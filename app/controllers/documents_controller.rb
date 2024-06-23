@@ -35,7 +35,7 @@ class DocumentsController < AuthenticatedController
 
     if document.save
       DocumentsMailer.create(document).deliver_later
-      redirect_to document_url(document), notice: 'Document was successfully created.'
+      redirect_to document_url(document), notice: 'CMR utworzony.'
     else
       available_hours = ::AvailableHours.new(document.taking_over_date, document: @document).call
 
@@ -45,7 +45,7 @@ class DocumentsController < AuthenticatedController
 
   def update
     if @document.update(document_params)
-      redirect_to document_url(@document), notice: 'Document was successfully updated.'
+      redirect_to document_url(@document), notice: 'CMR zaktualizowany.'
     else
       available_hours = ::AvailableHours.new(@document.taking_over_date, document: @document).call
       render :edit, status: :unprocessable_entity, locals: { document: @document, available_hours: }
@@ -55,7 +55,7 @@ class DocumentsController < AuthenticatedController
   def destroy
     @document.destroy!
 
-    redirect_to documents_url, notice: 'Document was successfully destroyed.'
+    redirect_to documents_url, notice: 'CMR usunięty.'
   end
 
   private
@@ -63,7 +63,7 @@ class DocumentsController < AuthenticatedController
   def set_document
     @document = Document.find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    redirect_to documents_url, alert: 'Document not found.'
+    redirect_to documents_url, alert: 'CMR nie istnieje.'
   end
 
   def generate_cmr_number
@@ -82,6 +82,7 @@ class DocumentsController < AuthenticatedController
                                      :carriage_instructions_14, :carriage_paid_14, :carriage_forward_14,
                                      :cash_on_delivery_15, :carrier_16, :carriers_plates_16, :successive_carriers_17,
                                      :carriers_reservations_18, :special_agreements_19, :established_in_21,
-                                     :established_in_date_21, :taking_over_date, :taking_over_start_time, :products)
+                                     :established_in_date_21, :taking_over_date, :taking_over_start_time, :products,
+                                     :sender_signature)
   end
 end

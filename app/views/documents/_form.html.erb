@@ -3,10 +3,10 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :sender, input_html: { rows: 5 } %>
+    <%= f.input :sender, collection: sender_collection %>
     <%= f.input :consignee, input_html: { rows: 5 } %>
     <%= f.input :delivery_place %>
-    <%= f.input :taking_over_place %>
+    <%= f.input :taking_over_place, collection: taking_over_place_collection %>
 
     <div data-controller="available-hours">
       <%= f.input :taking_over_date, as: :string, input_html: { type: 'date', data: { available_hours_target: 'dateInput' } } %>
@@ -73,6 +73,8 @@
 
     <%= f.input :established_in_21 %>
     <%= f.input :established_in_date_21 %>
+    <%= f.input :sender_signature, collection: sender_signature_collection,
+                selected: f.object.sender_signature.presence || sender_signature_collection.first %>
   </div>
 
   <div class="form-actions">

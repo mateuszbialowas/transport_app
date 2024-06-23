@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_23_122403) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_23_200705) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -72,6 +72,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_23_122403) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.text "sender_signature"
     t.index ["cmr_number"], name: "index_documents_on_cmr_number", unique: true
     t.index ["user_id"], name: "index_documents_on_user_id"
   end

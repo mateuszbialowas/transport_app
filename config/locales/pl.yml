@@ -43,6 +43,8 @@ pl:
         number_7_4: Ilośc sztuk
         sender: Nadawca
         sender_instructions_13: Instrukcje nadawcy
+        sender_signature: Podpis nadawcy
+        taking_over_start_at: Data i godzina załadunku
         special_agreements_19: Postanowienia specjalne
         successive_carriers_17: Kolejni przewoźnicy
         taking_over_date: Data załadunku

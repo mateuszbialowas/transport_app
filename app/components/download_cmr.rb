@@ -32,7 +32,7 @@ class DownloadCmr < ViewComponent::Base
       cmr_established_in_value: @document.established_in_21,
       cmr_established_in_date_value: @document.established_in_date_21,
       cmr_cash_on_delivery_value: @document.cash_on_delivery_15,
-      cmr_sender_signature_value:
+      cmr_sender_signature_value: @document.sender_signature
     }
   end
 

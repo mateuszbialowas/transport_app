@@ -1,40 +1,31 @@
-<div id="<%= dom_id document %>">
-  <p>
-    <%= content_tag :strong, Document.human_attribute_name(:cmr_number) %>
+<%= content_tag :h1, "CMR #{document.cmr_number}" %>
 
-    <span id="cmr_number">
-      <%= document.cmr_number %>
-    </span>
-  </p>
+<div class="border p-2">
+  <%= content_tag :h5, Document.human_attribute_name(:sender) %>
+  <%= simple_format document.sender.presence || "Brak danych" %>
+</div>
 
-  <p>
-    <%= content_tag :strong, Document.human_attribute_name(:sender) %>
-    <%= document.sender %>
-  </p>
+<div class="border p-2">
+  <%= content_tag :h5, Document.human_attribute_name(:consignee) %>
+  <%= document.consignee.presence || "Brak danych"  %>
+</div>
 
-  <p>
-    <%= content_tag :strong, Document.human_attribute_name(:consignee) %>
-    <span id="consignee">
-    <%= document.consignee %>
-    </span>
-  </p>
+<div class="border p-2">
+  <%= content_tag :h5, Document.human_attribute_name(:delivery_place) %>
+  <%= document.delivery_place.presence || "Brak danych"  %>
+</div>
 
-  <p>
-    <%= content_tag :strong, Document.human_attribute_name(:delivery_place) %>
-    <span id="delivery_place">
-    <%= document.delivery_place %>
-    </span>
-  </p>
+<div class="border p-2">
+  <%= content_tag :h5, Document.human_attribute_name(:taking_over_place) %>
+  <%= document.taking_over_place.presence || "Brak danych"  %>
+</div>
 
-  <p>
-    <%= content_tag :strong, Document.human_attribute_name(:taking_over_place) %>
-    <span id="taking_over_place">
-    <%= document.taking_over_place %>
-    </span>
-  </p>
+<div class="border p-2">
+  <%= content_tag :h5, Document.human_attribute_name(:taking_over_start_at) %>
+  <%= l document.taking_over_start_at, format: :short %>
+</div>
 
-  <p>
-    <%= content_tag :strong, Document.human_attribute_name(:taking_over_start_at) %>
-    <%= l document.taking_over_start_at, format: :short %>
-  </p>
+<div class="border p-2">
+  <%= content_tag :h5, Document.human_attribute_name(:sender_signature) %>
+  <%= simple_format document.sender_signature %>
 </div>

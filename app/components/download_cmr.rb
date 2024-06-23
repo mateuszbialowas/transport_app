@@ -5,9 +5,14 @@ class DownloadCmr < ViewComponent::Base
     @document = document
   end
 
+  private
+
   def data
-    { controller: 'cmr',
-      action: 'click->cmr#save',
+    { controller: 'cmr', action: 'click->cmr#save' }.merge(cmr_values)
+  end
+
+  def cmr_values # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
+    {
       cmr_sender_value: @document.sender,
       cmr_number_value: @document.cmr_number,
       cmr_consignee_value: @document.consignee,
@@ -27,7 +32,8 @@ class DownloadCmr < ViewComponent::Base
       cmr_established_in_value: @document.established_in_21,
       cmr_established_in_date_value: @document.established_in_date_21,
       cmr_cash_on_delivery_value: @document.cash_on_delivery_15,
-      cmr_sender_signature_value: }
+      cmr_sender_signature_value:
+    }
   end
 
   def cmr_sender_signature_value

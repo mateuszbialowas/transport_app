@@ -10,11 +10,6 @@
   <tr>
     <th scope="col">#</th>
     <th scope="col">CMR NR</th>
-    <th scope="col">DATA WYSTAWIENIA</th>
-    <th scope="col">DATA ODBIORU</th>
-    <th scope="col">ODBIORCA</th>
-    <th scope="col">PRZEWOŹNIK</th>
-    <th scope="col">TOWARY</th>
     <th scope="col">AKCJA</th>
   </tr>
   </thead>
@@ -23,12 +18,15 @@
     <tr>
       <th scope="row"><%= document.id %></th>
       <td><%= document.cmr_number %></td>
-      <td><%= l(document.created_at, format: :short) %></td>
-      <td><%= l(document.taking_over_start_at, format: :short) %></td>
-      <td>...</td>
-      <td>...</td>
-      <td><%= simple_format document.products %>
-      <td><%= link_to "Zobacz", document %></td>
+      <td>
+        <div class="d-flex gap-2">
+          <%= link_to document, class: 'btn btn-outline-primary btn-sm' do %>
+            Sczegóły <i class="fa-solid fa-eye"></i>
+          <% end %>
+
+          <%= render DownloadCmr.new(document:) %>
+        </div>
+      </td>
     </tr>
   <% end %>
   </tbody>

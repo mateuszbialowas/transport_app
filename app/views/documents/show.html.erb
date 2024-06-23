@@ -1,8 +1,9 @@
 <%= render document %>
 
 <div>
-  <%= link_to "Edit this document", edit_document_path(document) %> |
-  <%= link_to "Back to documents", documents_path %>
+  <%= link_to edit_document_path(document), class: 'btn btn-outline-primary' do %>
+    Edit this document <i class="fa-solid fa-pen-to-square"></i>
+  <% end %>
 
   <%= button_to "Destroy this document", document, method: :delete, class: "btn btn-danger" %>
   <%= render DownloadCmr.new(document: ) %>

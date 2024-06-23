@@ -7,6 +7,29 @@ import "./jspdf/Roboto-Bold-normal.js";
 // Connects to data-controller="cmr"
 export default class extends Controller {
 
+    static values = {
+        sender: String,
+        cmrNumber: String,
+        consignee: String,
+        carrier: String,
+        carriersPlates: String,
+        deliveryPlace: String,
+        successiveCarriers: String,
+        takingOverPlace: String,
+        takingOverDate: String,
+        documents: String,
+        products: String,
+        senderInstructions: String,
+        specialAgreements: String,
+        carriageInstructions: String,
+        carriagePaid: String,
+        carriageForward: String,
+        establishedIn: String,
+        establishedInDate: String,
+        cashOnDelivery: String,
+        senderSignature: String
+    }
+
     save() {
         let doc = new jsPDF();
 
@@ -546,19 +569,18 @@ export default class extends Controller {
         doc.setTextColor(1, 1, 1);
 
 
-        doc.text(21, 35,     document.getElementById("document_sender").value);
-        doc.text(166, 33,    document.getElementById("document_cmr_number").value);
-        doc.text(21, 59,     document.getElementById("document_consignee").value);
-        doc.text(112, 59,    document.getElementById("document_carrier_16").value);
-        doc.text(130, 71.5,  document.getElementById("document_carriers_plates_16").value);
-        doc.text(21, 83,     document.getElementById("document_delivery_place").value);
-        doc.text(112, 83,    document.getElementById("document_successive_carriers_17").value);
-        doc.text(21, 107,    document.getElementById("document_taking_over_place").value);
-        doc.text(85, 107,    document.getElementById("document_taking_over_date").value);
-        doc.text(21, 122,    document.getElementById("document_documents").value);
+        doc.text(21, 35,     this.senderValue);
+        doc.text(166, 33,    this.cmrNumberValue);
+        doc.text(21, 59,     this.consigneeValue);
+        doc.text(112, 59,    this.carrierValue);
+        doc.text(130, 71.5,  this.carriersPlatesValue);
+        doc.text(21, 83,     this.deliveryPlaceValue);
+        doc.text(112, 83,    this.successiveCarriersValue);
+        doc.text(21, 107,    this.takingOverPlaceValue);
+        doc.text(85, 107,    this.takingOverDateValue);
+        doc.text(21, 122,    this.documentsValue);
 
-
-        doc.text(21, 139,    document.getElementById("document_products").value);
+        doc.text(21, 139,    this.productsValue);
 
         // doc.text(21, 139,    document.getElementById("document_marks_6_1").value);
         // doc.text(50, 139,    document.getElementById("document_number_7_1").value);
@@ -596,17 +618,15 @@ export default class extends Controller {
         // doc.text(54, 184.5,  document.getElementById("document_number_7").value);
         // doc.text(85, 184.5,  document.getElementById("document_letter_8").value);
         // doc.text(109, 184.5, document.getElementById("document_adr_9").value);
-        doc.text(21, 197,    document.getElementById("document_sender_instructions_13").value);
-        doc.text(110, 197,   document.getElementById("document_special_agreements_19").value);
-        doc.text(57, 234,    document.getElementById("document_carriage_instructions_14").value);
-        doc.text(67, 238,    document.getElementById("document_carriage_paid_14").value);
-        doc.text(67, 242,    document.getElementById("document_carriage_forward_14").value);
-        doc.text(38, 248,    document.getElementById("document_established_in_21").value);
-        doc.text(76, 248,    document.getElementById("document_established_in_date_21").value);
-        doc.text(129, 248,   document.getElementById("document_cash_on_delivery_15").value);
-        doc.text(21, 254,    document.getElementById("document_sender_signature_22").innerText);
+        doc.text(21, 197,    this.senderInstructionsValue);
+        doc.text(110, 197,   this.specialAgreementsValue);
+        doc.text(57, 234,    this.carriageInstructionsValue);
+        doc.text(67, 238,    this.carriagePaidValue);
+        doc.text(67, 242,    this.carriageForwardValue);
+        doc.text(38, 248,    this.establishedInValue);
+        doc.text(76, 248,    this.establishedInDateValue);
+        doc.text(129, 248,   this.cashOnDeliveryValue);
+        doc.text(21, 254,    this.senderSignatureValue);
     }
 }
-
-
 

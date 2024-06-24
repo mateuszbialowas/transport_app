@@ -626,7 +626,7 @@ export default class extends Controller {
         doc.text(38, 248,    this.establishedInValue);
         doc.text(76, 248,    this.establishedInDateValue);
         doc.text(129, 248,   this.cashOnDeliveryValue);
-        doc.text(21, 254,    this.senderSignatureValue);
+        doc.text(23, 258,    this.senderSignatureValue);
     }
 }
 

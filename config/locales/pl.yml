@@ -335,7 +335,7 @@ pl:
       subject: 'Potwiwerdzenie daty i godziny załadunku'
   documents:
     form:
-      submit: Zapisz i wyślij potwierdzenie daty i godziny załadunku
+      submit: Zapisz
   errors:
     already_confirmed: już został aktywowany, możesz się zalogować
     confirmation_period_expired: musi być potwierdzone w ciągu %{period}, zamów nową wiadomość aktywacyjną

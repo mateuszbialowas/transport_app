@@ -8,7 +8,7 @@ class AvailableHours
 
   def call
     hours = (8..16).map do |hour|
-      ["#{hour}:00", "#{hour}:30"]
+      ["%02d:00" % hour, "%02d:30" % hour]
     end.flatten
 
     hours.reject do |hour|
